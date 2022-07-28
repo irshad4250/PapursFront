@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import Head from "next/head"
 import styles from "../styles/home.module.css"
 import funnelIcon from "../public/assets/icons/funnel.svg"
@@ -7,6 +7,7 @@ import NoInputNavbar from "../components/NoInputNavbar"
 import FilterBox from "../components/FilterBox"
 import { useRouter } from "next/router"
 import axios from "axios"
+import { postReq } from "../Global/functions"
 
 export default function Home() {
   const [showFilter, setShowFilter] = useState(false)
@@ -163,7 +164,7 @@ export async function getServerSideProps(context) {
   registerLog(papursId, source)
 
   function registerLog(cookieId, source) {
-    axios.post(process.env.NEXT_PUBLIC_BACKEND_URL + "registerLog", {
+    postReq(process.env.NEXT_PUBLIC_BACKEND_URL + "registerLog", {
       cookieId: cookieId,
       source: source,
     })
