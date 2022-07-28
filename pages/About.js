@@ -1,6 +1,6 @@
 import React from "react"
 import NoInputNavbar from "../components/NoInputNavbar"
-import styles from "../styles/About.module.css"
+import styles from "../styles/about.module.css"
 import Head from "next/head"
 
 function About(props) {

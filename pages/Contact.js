@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import styles from "../styles/Contact.module.css"
+import styles from "../styles/contact.module.css"
 import NoInputNavbar from "../components/NoInputNavbar"
 import { postReq } from "../Global/functions"
 import Head from "next/head"

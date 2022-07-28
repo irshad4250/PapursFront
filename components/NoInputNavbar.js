@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import styles from "../styles/components/Noinputnavbar.module.css"
+import styles from "../styles/components/noinputnavbar.module.css"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import ListIcon from "../public/assets/icons/list.png"
