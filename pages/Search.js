@@ -1,8 +1,8 @@
-import React, { useEffect } from "react"
+import React from "react"
 import Head from "next/head"
 import Navbar from "../components/Navbar"
 import SearchResult from "../components/SearchResult"
-import { postReq, makeId } from "../Global/functions"
+import { makeId } from "../Global/functions"
 import axios from "axios"
 
 function Search(props) {
