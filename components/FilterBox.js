@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import styles from "../styles/Components/Filterbox.module.css"
+import styles from "../styles/components/Filterbox.module.css"
 import { motion } from "framer-motion"
 import * as globalFunctions from "../Global/functions"
 
