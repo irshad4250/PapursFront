@@ -1,4 +1,3 @@
-import axios from "axios"
 import { NextResponse } from "next/server"
 import { makeId } from "./Global/functions"
 

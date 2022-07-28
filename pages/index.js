@@ -167,7 +167,7 @@ export async function getServerSideProps(context) {
     postReq(process.env.NEXT_PUBLIC_BACKEND_URL + "registerLog", {
       cookieId: cookieId,
       source: source,
-    })
+    }).then((e) => {})
   }
   return { props: {} }
 }
