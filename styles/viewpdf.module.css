@@ -1,0 +1,27 @@
+/* html {
+  height: 100vh;
+  overflow: hidden;
+} */
+.pdfContainer {
+  height: calc(100% - 52px);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100vw;
+}
+.main {
+  height: 100%;
+}
+.warnBox {
+  position: absolute;
+  left: 0;
+  top: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.warnMessage {
+  padding: 5px;
+  font-family: var(--fontAccent);
+}

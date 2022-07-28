@@ -1,26 +1,64 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+:root {
+  --colorAccent: #6d28d9;
+  --colorAccentHover: #9158ec;
+  --fontAccent: "Noto Sans", sans-serif;
+  --titleFont: "Maven Pro", sans-serif;
+  --bodyColor: rgb(245 245 245);
 }
 
 * {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+h1 {
+  width: fit-content;
+  margin: auto;
+  font-family: var(--titleFont);
+}
+
+body {
+  background-color: rgb(245 245 245);
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: inline;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  display: inline;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  overflow: auto;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+input {
+  outline: none;
+  appearance: none;
+  border: none;
+  -webkit-appearance: none;
+}
+
+.papursButton {
+  background-color: var(--colorAccent);
+  border-radius: 10px;
+  font-family: var(--fontAccent);
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  transition: 150ms ease-in-out;
+  cursor: pointer;
+}
+
+.papursButton:hover {
+  background-color: var(--colorAccentHover);
 }
