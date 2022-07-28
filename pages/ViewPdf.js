@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import styles from "../styles/viewpdf.module.css"
+import styles from "../styles/Viewpdf.module.css"
 import Navbar from "../components/Navbar"
 import Head from "next/head"
 import axios from "axios"

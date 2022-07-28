@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import styles from "../../styles/pastpapers.module.css"
+import styles from "../../styles/Pastpapers.module.css"
 import NoInputNavbar from "../../components/NoInputNavbar"
 import { getSubjects, getYears } from "../../Global/functions"
 import { useRouter } from "next/router"

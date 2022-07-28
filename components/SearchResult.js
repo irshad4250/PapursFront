@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../styles/Components/searchResult.module.css"
+import styles from "../styles/Components/SearchResult.module.css"
 import Image from "next/image"
 import PaperClipIcon from "../public/assets/icons/paperclip.svg"
 import PenIcon from "../public/assets/icons/pen.svg"

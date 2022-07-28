@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Head from "next/head"
-import styles from "../styles/home.module.css"
+import styles from "../styles/Home.module.css"
 import funnelIcon from "../public/assets/icons/funnel.svg"
 import Image from "next/image"
 import NoInputNavbar from "../components/NoInputNavbar"
