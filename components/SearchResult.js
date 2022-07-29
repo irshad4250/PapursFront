@@ -21,7 +21,7 @@ function SearchResult(props) {
       {props.subject && (
         <div className={styles.resultSubject}>{props.subject}</div>
       )}
-      {props.resulText && (
+      {props.resultText && (
         <div className={styles.resultText}>{props.resultText}</div>
       )}
       <div className={styles.resultRedirects}>
