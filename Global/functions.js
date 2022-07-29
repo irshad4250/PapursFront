@@ -11,40 +11,24 @@ export function makeId(length) {
 }
 
 export function getSubjects(level) {
-  return new Promise((resolve, reject) => {
-    axios
-      .post(process.env.NEXT_PUBLIC_BACKEND_URL + "api/getSubjectsLevel", {
-        level: level,
-      })
-      .then((result) => {
-        if (result.data.error) {
-          resolve([])
-        } else {
-          resolve(result.data.data)
-        }
-      })
-      .catch(() => {
-        resolve([])
-      })
+  return new Promise(async (resolve, reject) => {
+    const subjects = await postReq("/api/getSubjects", { level: level })
+    if (subjects.error) {
+      resolve([])
+    } else {
+      resolve(subjects)
+    }
   })
 }
 
 export function getYears(subject) {
-  return new Promise((resolve, reject) => {
-    axios
-      .post(process.env.NEXT_PUBLIC_BACKEND_URL + "api/getYears", {
-        subject: subject,
-      })
-      .then((result) => {
-        if (result.data.error) {
-          resolve([])
-        } else {
-          resolve(result.data.data)
-        }
-      })
-      .catch(() => {
-        resolve([])
-      })
+  return new Promise(async (resolve, reject) => {
+    const years = await postReq("/api/getYears", { subject: subject })
+    if (years.error) {
+      resolve([])
+    } else {
+      resolve(years)
+    }
   })
 }
 
