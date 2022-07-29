@@ -68,7 +68,7 @@ export default function Home() {
           content="O-Level, A-Level, CIE, Past Papers,Search, Search Past Papers, Cambridge"
         />
         <meta
-          http-equiv="Content-Security-Policy"
+          httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         ></meta>
         <title>Papurs</title>

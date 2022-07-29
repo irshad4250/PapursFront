@@ -86,7 +86,7 @@ function PastPapers(props) {
       <Head>
         <title>Past Papers Navigator</title>
         <meta
-          http-equiv="Content-Security-Policy"
+          httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         ></meta>
       </Head>

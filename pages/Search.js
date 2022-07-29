@@ -10,7 +10,7 @@ function Search(props) {
     <div>
       <Head>
         <meta
-          http-equiv="Content-Security-Policy"
+          httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         ></meta>
         <title>{"Papurs | " + props.q}</title>
