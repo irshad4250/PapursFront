@@ -9,6 +9,10 @@ function Search(props) {
   return (
     <div>
       <Head>
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        ></meta>
         <title>{"Papurs | " + props.q}</title>
       </Head>
       <Navbar q={props.q} />

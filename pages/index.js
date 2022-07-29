@@ -5,8 +5,6 @@ import funnelIcon from "../public/assets/icons/funnel.svg"
 import Image from "next/image"
 import NoInputNavbar from "../components/NoInputNavbar"
 import FilterBox from "../components/FilterBox"
-import { useRouter } from "next/router"
-import axios from "axios"
 import { postReq } from "../Global/functions"
 
 export default function Home() {
@@ -18,7 +16,6 @@ export default function Home() {
   })
 
   const [searchValue, setSearchValue] = useState("")
-  const router = useRouter()
 
   function handleUpdate(subject, year, level) {
     setFilterObj({ year: year, subject: subject, level: level })
@@ -45,7 +42,7 @@ export default function Home() {
     if (yearGot && yearGot != "Any") {
       url += `&year=${yearGot}`
     }
-    router.push(url)
+    window.location.href = url
   }
 
   return (
@@ -70,6 +67,10 @@ export default function Home() {
           name="keywords"
           content="O-Level, A-Level, CIE, Past Papers,Search, Search Past Papers, Cambridge"
         />
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        ></meta>
         <title>Papurs</title>
       </Head>
       <div className="main">

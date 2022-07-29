@@ -2,12 +2,9 @@ import React, { useState } from "react"
 import styles from "../../styles/pastpapers.module.css"
 import NoInputNavbar from "../../components/NoInputNavbar"
 import { getSubjects, getYears } from "../../Global/functions"
-import { useRouter } from "next/router"
 import Head from "next/head"
 
 function PastPapers(props) {
-  const router = useRouter()
-
   const [subjects, setSubjects] = useState([])
   const [subjectValue, setSubjectValue] = useState()
   const [subjectDisabled, setSubjectDisabled] = useState(true)
@@ -81,13 +78,17 @@ function PastPapers(props) {
     }
 
     const url = `/PastPapers/Papers?subject=${subjectValue}&year=${yearsValue}`
-    router.push(url)
+    window.location.href = url
   }
 
   return (
     <div className="main">
       <Head>
         <title>Past Papers Navigator</title>
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        ></meta>
       </Head>
       <NoInputNavbar />
       <h1 style={{ marginTop: 20, textAlign: "center" }}>
