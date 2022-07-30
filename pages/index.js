@@ -88,13 +88,13 @@ export default function Home() {
             `}</style>
             <a
               href="https://go.fiverr.com/visit/?bta=488083&nci=16949"
-              Target="_Top"
+              target="_Top"
             >
               <img
                 border="0"
                 src="https://fiverr.ck-cdn.com/tn/serve/?cid=19327845"
-                width="450"
-                height="60"
+                width="350"
+                height="45"
               />
             </a>
           </div>
