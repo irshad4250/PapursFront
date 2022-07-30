@@ -9,8 +9,10 @@ const adUrl = "https://go.fiverr.com/visit/?bta=488083&brand=fiverrcpa"
 
 function SearchResult(props) {
   const [showAds, setShowAds] = useState({
-    ms: getRndInteger(1, 3) == 1 ? true : false,
-    qp: getRndInteger(1, 3) == 1 ? true : false,
+    // ms: getRndInteger(1, 3) == 1 ? true : false,
+    // qp: getRndInteger(1, 3) == 1 ? true : false,
+    ms: false,
+    qp: false,
   })
 
   function getRndInteger(min, max) {
