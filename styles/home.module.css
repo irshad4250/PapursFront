@@ -37,7 +37,7 @@
 }
 
 .inputContainer {
-  padding-top: 40px;
+  padding-top: 20px;
   width: 100%;
   min-width: 300px;
   row-gap: 40px;
@@ -145,7 +145,7 @@
     padding: 10px;
   }
   .papursTitle {
-    margin-top: 15%;
+    margin-top: 5%;
   }
   .howToUseBox {
     width: 100%;

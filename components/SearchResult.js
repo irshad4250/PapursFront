@@ -1,11 +1,36 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "../styles/components/searchresult.module.css"
 import Image from "next/image"
 import PaperClipIcon from "../public/assets/icons/paperclip.svg"
 import PenIcon from "../public/assets/icons/pen.svg"
 import StickiesIcon from "../public/assets/icons/stickies.svg"
 
+const adUrl = "https://go.fiverr.com/visit/?bta=488083&brand=fiverrcpa"
+
 function SearchResult(props) {
+  const [showAds, setShowAds] = useState({
+    ms: getRndInteger(1, 3) == 1 ? true : false,
+    qp: getRndInteger(1, 3) == 1 ? true : false,
+  })
+
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min
+  }
+
+  function msClicked() {
+    if (showAds.ms) {
+      window.open(adUrl, "_blank")
+    }
+    setShowAds({ ms: false, qp: false })
+  }
+
+  function qpClicked() {
+    if (showAds.qp) {
+      window.open(adUrl, "_blank")
+    }
+    setShowAds({ ms: false, qp: false })
+  }
+
   return (
     <div className={styles.resultBox}>
       <div className={styles.resultTitle}>
@@ -30,6 +55,7 @@ function SearchResult(props) {
           href={props.qpLink}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={qpClicked}
         >
           <Image
             src={PaperClipIcon}
@@ -44,6 +70,7 @@ function SearchResult(props) {
           href={props.msLink}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={msClicked}
         >
           <Image
             src={PenIcon}

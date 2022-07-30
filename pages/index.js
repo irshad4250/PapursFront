@@ -75,6 +75,30 @@ export default function Home() {
       </Head>
       <div className="main">
         <div className={styles.inputContainer}>
+          <div className="divMargin">
+            <style jsx>{`
+              .divMargin {
+                margin: auto;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 15px;
+              }
+            `}</style>
+            <a
+              href="https://go.fiverr.com/visit/?bta=488083&nci=16949"
+              Target="_Top"
+            >
+              <img
+                border="0"
+                src="https://fiverr.ck-cdn.com/tn/serve/?cid=19327845"
+                width="450"
+                height="60"
+              />
+            </a>
+          </div>
+
           <h1 className={styles.papursTitle}>Papurs</h1>
           <div className={styles.searchBoxAndFilterContainer}>
             <input
@@ -108,7 +132,31 @@ export default function Home() {
           <div className={styles.searchButton} onClick={go}>
             Search
           </div>
-
+          <div className="divMargin">
+            <style jsx>{`
+              .divMargin {
+                margin: auto;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 15px;
+                margin-bottom: 15px;
+              }
+            `}</style>
+            <a
+              href="https://go.fiverr.com/visit/?bta=488083&nci=9985"
+              rel="sponsored"
+              Target="_Top"
+            >
+              <img
+                border="0"
+                src="https://fiverr.ck-cdn.com/tn/serve/?cid=19327868"
+                width="350"
+                height="250"
+              />
+            </a>
+          </div>
           <div className={styles.howToUseBox}>
             <h2>Papurs.com is now our new domain!</h2>
             <h2>How to use</h2>
