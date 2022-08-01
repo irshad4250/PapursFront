@@ -1,0 +1,21 @@
+.explorerUl {
+  margin: 0;
+  margin: auto;
+  padding: 0;
+  list-style-type: none;
+  height: fit-content;
+  width: 50%;
+  border: solid 1px rgb(157, 157, 157);
+  border-radius: 15px;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .explorerUl {
+    width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}

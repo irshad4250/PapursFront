@@ -12,6 +12,13 @@ function News(props) {
       <NoInputNavbar />
       <h1 className="title">Papurs News</h1>
       <NewsComponent
+        title={"Papurs Update V 0.6"}
+        body={
+          "Added past papers explorer. You can view which papers are available to search now."
+        }
+        date={"01/08/2022"}
+      />
+      <NewsComponent
         title={"Papurs Update V 0.5"}
         body={
           "You can now view past papers. Click on Past papers in the navigation bar. You will be redirected to the past papers navigator. The Past papers navigator was designed to be simple and easy to use. It's different from other websites where you would need to go from page to page in order to view your paper."

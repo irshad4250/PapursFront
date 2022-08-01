@@ -147,7 +147,7 @@ export default function Home() {
             <a
               href="https://go.fiverr.com/visit/?bta=488083&nci=9985"
               rel="sponsored"
-              Target="_Top"
+              target="_Top"
             >
               <img
                 border="0"

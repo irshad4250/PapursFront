@@ -131,6 +131,11 @@ function Navbar(props) {
               </Link>
             </li>
             <li>
+              <Link href="/PapersExplorer">
+                <a>Papers explorer</a>
+              </Link>
+            </li>
+            <li>
               <Link href="/About">
                 <a>About</a>
               </Link>
