@@ -86,17 +86,16 @@ export default function Home() {
                 margin-bottom: 15px;
               }
             `}</style>
-            <a
-              href="https://go.fiverr.com/visit/?bta=488083&nci=16949"
-              target="_Top"
-            >
-              <img
-                border="0"
-                src="https://fiverr.ck-cdn.com/tn/serve/?cid=19327845"
-                width="350"
-                height="45"
-              />
-            </a>
+            <iframe
+              src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=13&l=ur1&category=primemain&banner=077N6HNJEVTN0SV2X2G2&f=ifr&linkID=02ca4ec4c5709474e2649eb458759e24&t=irshad090-20&tracking_id=irshad090-20"
+              width="400"
+              height="60"
+              scrolling="no"
+              border="0"
+              marginWidth="0"
+              frameBorder="0"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"
+            ></iframe>
           </div>
 
           <h1 className={styles.papursTitle}>Papurs</h1>
@@ -144,18 +143,16 @@ export default function Home() {
                 margin-bottom: 15px;
               }
             `}</style>
-            <a
-              href="https://go.fiverr.com/visit/?bta=488083&nci=9985"
-              rel="sponsored"
-              target="_Top"
-            >
-              <img
-                border="0"
-                src="https://fiverr.ck-cdn.com/tn/serve/?cid=19327868"
-                width="350"
-                height="250"
-              />
-            </a>
+            <iframe
+              src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primewardrobe&banner=05WJ61GNNSD0DY63A402&f=ifr&linkID=e908a1503029a1e0f51efaeaaff0dcc8&t=irshad090-20&tracking_id=irshad090-20"
+              width="300"
+              height="250"
+              scrolling="no"
+              border="0"
+              marginWidth="0"
+              frameBorder="0"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"
+            ></iframe>
           </div>
           <div className={styles.howToUseBox}>
             <h2>Papurs.com is now our new domain!</h2>
