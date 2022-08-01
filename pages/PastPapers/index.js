@@ -178,8 +178,8 @@ function PastPapers(props) {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 15px;
             margin-bottom: 15px;
+            margin-top: 15px;
           }
         `}</style>
         <a
