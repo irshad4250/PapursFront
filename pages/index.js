@@ -110,6 +110,7 @@ export default function Home() {
           </div>
 
           <div className={styles.howToUseBox}>
+            <h2>Coming soon, Autocomplete</h2>
             <h2>How to use</h2>
             <div>1. Enter question. For example: what is a mole.</div>
             <div>2. Press search.</div>
@@ -121,7 +122,7 @@ export default function Home() {
               unique from other papers.
             </div>
             <div>
-              For example, the diagram shows a cannon ball fired from a cannon ,
+              For example, the diagram shows a cannon ball fired from a cannon,
               will be more likely to bring the right paper than what is a mole.
             </div>
             <div>
@@ -131,7 +132,7 @@ export default function Home() {
             </div>
             <div>
               You can also filter your results to bring more relevant results.
-              Let's say your search is a particle, the results may bring you
+              Lets say your search is a particle, the results may bring you
               physics,chemistry and even biology papers. But you can filter the
               search to only show chemistry papers and even the year you want.
             </div>
