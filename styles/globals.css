@@ -62,3 +62,13 @@ input {
 .papursButton:hover {
   background-color: var(--colorAccentHover);
 }
+
+.divMargin {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
