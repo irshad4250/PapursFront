@@ -75,14 +75,6 @@ export default function Home() {
       </Head>
       <div className="main">
         <div className={styles.inputContainer}>
-          <div className="divMargin">
-            <ins
-              className="adsbygoogle"
-              style={{ display: "inline-block", width: 30, height: 90 }}
-              data-ad-client="ca-pub-8618691594432056"
-              data-ad-slot="3322300084"
-            ></ins>
-          </div>
           <h1 className={styles.papursTitle}>Papurs</h1>
           <div className={styles.searchBoxAndFilterContainer}>
             <input
@@ -115,17 +107,6 @@ export default function Home() {
 
           <div className={styles.searchButton} onClick={go}>
             Search
-          </div>
-
-          <div className="divMargin">
-            <ins
-              className="adsbygoogle"
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-8618691594432056"
-              data-ad-slot="9996068388"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            ></ins>
           </div>
 
           <div className={styles.howToUseBox}>
