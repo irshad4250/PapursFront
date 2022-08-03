@@ -5,9 +5,11 @@ import Head from "next/head"
 import { Worker, Viewer } from "@react-pdf-viewer/core"
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout"
 import { getFilePlugin } from "@react-pdf-viewer/get-file"
+import { postReq } from "../Global/functions"
 
 import "@react-pdf-viewer/core/lib/styles/index.css"
 import "@react-pdf-viewer/default-layout/lib/styles/index.css"
+import axios from "axios"
 
 function ViewPdf(props) {
   const getFilePluginInstance = getFilePlugin()
@@ -74,11 +76,14 @@ export async function getServerSideProps(context) {
   const pdfName = context.query.name
   const type = context.query.type
 
-  let pdfUrl = process.env.NEXT_PUBLIC_BACKEND_URL + `getPdf?pdfName=${pdfName}`
+  let pdfLink =
+    process.env.NEXT_PUBLIC_BACKEND_URL + `getPdfUrl?pdfName=${pdfName}`
 
   if (type) {
-    pdfUrl += `&type=${type}`
+    pdfLink += `&type=${type}`
   }
+
+  let pdfUrl = await getUrl(pdfLink)
 
   if (pdfUrl) {
     return {
@@ -91,6 +96,23 @@ export async function getServerSideProps(context) {
     return {
       notFound: true,
     }
+  }
+
+  function getUrl(link) {
+    return new Promise((resolve, reject) => {
+      axios
+        .get(link)
+        .then((response) => {
+          if (response.data.error) {
+            resolve()
+          } else {
+            resolve(response.data)
+          }
+        })
+        .catch(() => {
+          resolve()
+        })
+    })
   }
 }
 
