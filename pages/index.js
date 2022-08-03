@@ -120,6 +120,21 @@ export default function Home() {
               Tip: To get more accurate results. Type questions which seem to be
               unique from other papers.
             </div>
+            <div>
+              For example, the diagram shows a cannon ball fired from a cannon ,
+              will be more likely to bring the right paper than what is a mole.
+            </div>
+            <div>
+              Or if you want to surf papers. You can search what is a mole and
+              your search results will have a part of the paper based on you
+              search which you can read to find the paper you want.
+            </div>
+            <div>
+              You can also filter your results to bring more relevant results.
+              Let's say your search is a particle, the results may bring you
+              physics,chemistry and even biology papers. But you can filter the
+              search to only show chemistry papers and even the year you want.
+            </div>
             <h2>New Update</h2>
             {/* <div>
               Our pdf viewer is now better and more powerful and pdfs load
