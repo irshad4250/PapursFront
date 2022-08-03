@@ -35,15 +35,15 @@ function ViewPdf(props) {
         </div>
       </div>
 
-      {/* <iframe
+      <iframe
         src={`https://docs.google.com/viewerng/viewer?url=${props.pdfUrl}&embedded=true`}
         width="100%"
         className={styles.pdfContainer}
         scrolling="yes"
         frameBorder="0"
-      ></iframe> */}
+      ></iframe>
 
-      <div className={styles.pdfContainer}>
+      {/* <div className={styles.pdfContainer}>
         <Worker
           workerUrl="https://unpkg.com/pdfjs-dist@2.14.305/build/pdf.worker.min.js"
           style={{ width: "100%", height: "100%" }}
@@ -65,7 +65,7 @@ function ViewPdf(props) {
         max-height: 100% !important;
       }
       `}</style>
-      </div>
+      </div> */}
     </div>
   )
 }
