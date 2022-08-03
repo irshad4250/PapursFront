@@ -14,6 +14,7 @@
   margin-top: 20px;
   max-width: 400px;
   font-family: var(--fontAccent);
+  padding: 5px;
 }
 
 .papursButton {

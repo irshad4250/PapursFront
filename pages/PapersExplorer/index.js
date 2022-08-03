@@ -19,7 +19,16 @@ function index(props) {
         <title>Papers Explorer</title>
       </Head>
       <NoInputNavbar />
-      <h1 style={{ marginTop: 10, marginBottom: 10 }}>Examinations</h1>
+      <h1
+        style={{
+          marginTop: 10,
+          marginBottom: 10,
+          textAlign: "center",
+          padding: 10,
+        }}
+      >
+        Examinations
+      </h1>
       <ul className={styles.explorerUl}>
         <ExplorerBar href={"/PapersExplorer/A"} label="A Level" />
         <ExplorerBar href={"/PapersExplorer/O"} label="O Level" />

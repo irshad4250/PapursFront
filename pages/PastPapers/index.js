@@ -169,32 +169,6 @@ function PastPapers(props) {
         redirected to a list of available past papers for the specified
         criteria.
       </p>
-
-      <div className="divMargin">
-        <style jsx>{`
-          .divMargin {
-            margin: auto;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 15px;
-            margin-top: 15px;
-          }
-        `}</style>
-        <a
-          href="https://go.fiverr.com/visit/?bta=488083&nci=9985"
-          rel="sponsored"
-          Target="_Top"
-        >
-          <img
-            border="0"
-            src="https://fiverr.ck-cdn.com/tn/serve/?cid=19327868"
-            width="350"
-            height="250"
-          />
-        </a>
-      </div>
     </div>
   )
 }

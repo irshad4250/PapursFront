@@ -12,6 +12,27 @@ function News(props) {
       <NoInputNavbar />
       <h1 className="title">Papurs News</h1>
       <NewsComponent
+        title={"Coming soon"}
+        body={
+          "Autocomplete. We believe autocomplete will be extremely useful and faster when searching."
+        }
+        date={"03/08/2022"}
+      />
+      <NewsComponent
+        title={"Papurs Update V 0.7"}
+        body={
+          "Updated our pdf viewer. You can zoom in, zoom out, search and download pdfs now."
+        }
+        date={"03/08/2022"}
+      />
+      <NewsComponent
+        title={"Papurs Update V 0.7"}
+        body={
+          "Updated our pdf viewer. You can zoom in, zoom out, search and download pdfs now."
+        }
+        date={"01/08/2022"}
+      />
+      <NewsComponent
         title={"Papurs Update V 0.6"}
         body={
           "Added past papers explorer. You can view which papers are available to search now."

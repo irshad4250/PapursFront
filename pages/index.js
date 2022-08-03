@@ -75,29 +75,6 @@ export default function Home() {
       </Head>
       <div className="main">
         <div className={styles.inputContainer}>
-          <div className="divMargin">
-            <style jsx>{`
-              .divMargin {
-                margin: auto;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 15px;
-              }
-            `}</style>
-            <iframe
-              src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=13&l=ur1&category=primemain&banner=077N6HNJEVTN0SV2X2G2&f=ifr&linkID=02ca4ec4c5709474e2649eb458759e24&t=irshad090-20&tracking_id=irshad090-20"
-              width="400"
-              height="60"
-              scrolling="no"
-              border="0"
-              marginWidth="0"
-              frameBorder="0"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"
-            ></iframe>
-          </div>
-
           <h1 className={styles.papursTitle}>Papurs</h1>
           <div className={styles.searchBoxAndFilterContainer}>
             <input
@@ -131,31 +108,7 @@ export default function Home() {
           <div className={styles.searchButton} onClick={go}>
             Search
           </div>
-          <div className="divMargin">
-            <style jsx>{`
-              .divMargin {
-                margin: auto;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 15px;
-                margin-bottom: 15px;
-              }
-            `}</style>
-            <iframe
-              src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primewardrobe&banner=05WJ61GNNSD0DY63A402&f=ifr&linkID=e908a1503029a1e0f51efaeaaff0dcc8&t=irshad090-20&tracking_id=irshad090-20"
-              width="300"
-              height="250"
-              scrolling="no"
-              border="0"
-              marginWidth="0"
-              frameBorder="0"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"
-            ></iframe>
-          </div>
           <div className={styles.howToUseBox}>
-            <h2>Papurs.com is now our new domain!</h2>
             <h2>How to use</h2>
             <div>1. Enter question. For example: what is a mole.</div>
             <div>2. Press search.</div>
@@ -166,22 +119,14 @@ export default function Home() {
               Tip: To get more accurate results. Type questions which seem to be
               unique from other papers.
             </div>
-            <div>
-              For example: A person uses a trolley to move suitcases at an
-              airport will more unique than what is a mole. Therefore bringing
-              more accurate results.
-            </div>
             <h2>New Update</h2>
             <div>
-              Past papers navigator: You can now surf past papers. Click on Past
-              papers to try!
+              Our pdf viewer is now better and more powerful and pdfs load
+              better. You can even search the pdf and download it.
             </div>
             <div>
-              Papurs results are now extremely precise. You can now search fewer
-              words and get the same accurate results. Maths searches have also
-              been improved. We also added the filter feature, you can now press
-              the funnel icon to filter you search results. O Level papers are
-              now availabe.
+              Past papers explorer: You can now explore past papers available on
+              our webistes. Click on papers explorer to try!
             </div>
             <h2>Papers available</h2>
             <div>
