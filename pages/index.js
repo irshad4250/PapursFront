@@ -77,7 +77,6 @@ export default function Home() {
       </Head>
       <div className="main">
         <div className={styles.inputContainer}>
-          <Plaque />
           <h1 className={styles.papursTitle}>Papurs</h1>
           <div className={styles.searchBoxAndFilterContainer}>
             <input
