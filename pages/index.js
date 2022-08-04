@@ -6,6 +6,8 @@ import Image from "next/image"
 import NoInputNavbar from "../components/NoInputNavbar"
 import FilterBox from "../components/FilterBox"
 import { postReq } from "../Global/functions"
+import Block from "../components/Ads/Block"
+import Plaque from "../components/Ads/Plaque"
 
 export default function Home() {
   const [showFilter, setShowFilter] = useState(false)
@@ -75,6 +77,7 @@ export default function Home() {
       </Head>
       <div className="main">
         <div className={styles.inputContainer}>
+          <Plaque />
           <h1 className={styles.papursTitle}>Papurs</h1>
           <div className={styles.searchBoxAndFilterContainer}>
             <input
@@ -108,7 +111,7 @@ export default function Home() {
           <div className={styles.searchButton} onClick={go}>
             Search
           </div>
-
+          <Block />
           <div className={styles.howToUseBox}>
             <h2>Coming soon, Autocomplete</h2>
             <h2>How to use</h2>
