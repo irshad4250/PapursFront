@@ -131,7 +131,9 @@ function Navbar(props) {
               className={styles.funnelIcon + " " + styles.searchButton}
               width={30}
               alt="search"
-              onClick={go}
+              onClick={() => {
+                go()
+              }}
             />
             <AnimatePresence>
               {autocompleteList.length > 0 && inputFocused && (

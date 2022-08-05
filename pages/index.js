@@ -176,7 +176,12 @@ export default function Home() {
             )}
           </AnimatePresence>
 
-          <div className={styles.searchButton} onClick={go}>
+          <div
+            className={styles.searchButton}
+            onClick={() => {
+              go
+            }}
+          >
             Search
           </div>
           <Block />
