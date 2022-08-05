@@ -22,6 +22,8 @@ export default function Home() {
   const [inputFocused, setInputFocused] = useState(false)
   const [autocompleteList, setAutocompleteList] = useState([])
 
+  const [fetching, setFetching] = useState(false)
+
   function handleUpdate(subject, year, level) {
     setFilterObj({ year: year, subject: subject, level: level })
     setShowFilter(false)
@@ -55,7 +57,14 @@ export default function Home() {
       setAutocompleteList([])
       return
     }
+
+    if (fetching) {
+      return
+    }
+
+    setFetching(true)
     const autocomplete = await postReq("/api/autocomplete", { q: value })
+    setFetching(false)
 
     if (autocomplete.error) {
       return

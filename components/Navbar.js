@@ -21,6 +21,7 @@ function Navbar(props) {
 
   const [inputFocused, setInputFocused] = useState(false)
   const [autocompleteList, setAutocompleteList] = useState([])
+  const [fetching, setFetching] = useState(false)
 
   function menuClicked() {
     if (navbarTop == 0) {
@@ -63,7 +64,14 @@ function Navbar(props) {
       setAutocompleteList([])
       return
     }
+
+    if (fetching) {
+      return
+    }
+
+    setFetching(true)
     const autocomplete = await postReq("/api/autocomplete", { q: value })
+    setFetching(false)
 
     if (autocomplete.error) {
       return
