@@ -204,10 +204,11 @@ export default function Home() {
               search to only show chemistry papers and even the year you want.
             </div>
             <h2>New Update</h2>
-            {/* <div>
-              Our pdf viewer is now better and more powerful and pdfs load
-              better. You can even search the pdf and download it.
-            </div> */}
+            <div>
+              Added autocomplete to search bar. You can now view text
+              predictions while you type. This make searching questions more
+              effective.
+            </div>
             <div>
               Past papers explorer: You can now explore past papers available on
               our webistes. Click on papers explorer to try!
