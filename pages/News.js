@@ -25,7 +25,15 @@ function News(props) {
         }
         date={"03/08/2022"}
       /> */}
-    
+
+      <NewsComponent
+        title={"Papurs Update V 0.75"}
+        body={
+          "Added autocomplete to search bar. You can now view text predictions while you type. This make searching questions more effective."
+        }
+        date={"01/08/2022"}
+      />
+
       <NewsComponent
         title={"Papurs Update V 0.6"}
         body={

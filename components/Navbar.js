@@ -1,16 +1,15 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styles from "../styles/components/navbar.module.css"
 import Image from "next/image"
 import Link from "next/link"
 import FunnelIcon from "../public/assets/icons/funnel.svg"
 import SearchIcon from "../public/assets/icons/search.svg"
-import { useRouter } from "next/router"
+import { postReq, makeId } from "../Global/functions"
 import FilterBox from "../components/FilterBox"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import ListIcon from "../public/assets/icons/list.png"
 
 function Navbar(props) {
-  const router = useRouter()
   const [navbarTop, setNavbarTop] = useState("100%")
   const [showFilter, setShowFilter] = useState(false)
   const [filterObj, setFilterObj] = useState({
@@ -20,6 +19,9 @@ function Navbar(props) {
   })
   const [searchValue, setSearchValue] = useState(props.q)
 
+  const [inputFocused, setInputFocused] = useState(false)
+  const [autocompleteList, setAutocompleteList] = useState([])
+
   function menuClicked() {
     if (navbarTop == 0) {
       setNavbarTop("100%")
@@ -28,7 +30,7 @@ function Navbar(props) {
     }
   }
 
-  function go() {
+  function go(value) {
     if (!searchValue) {
       return
     }
@@ -37,7 +39,7 @@ function Navbar(props) {
     const subjectGot = filterObj.subject
     const levelGot = filterObj.level
 
-    let url = `/Search?q=${encodeURIComponent(searchValue)}`
+    let url = `/Search?q=${encodeURIComponent(value ? value : searchValue)}`
 
     if (levelGot && levelGot != "Any") {
       url += `&exam=${levelGot}`
@@ -48,12 +50,26 @@ function Navbar(props) {
     if (yearGot && yearGot != "Any") {
       url += `&year=${yearGot}`
     }
-    router.push(url)
+    window.location.href = url
   }
 
   function handleUpdate(subject, year, level) {
     setFilterObj({ year: year, subject: subject, level: level })
     setShowFilter(false)
+  }
+
+  async function handleTextChange(value) {
+    if (!value) {
+      setAutocompleteList([])
+      return
+    }
+    const autocomplete = await postReq("/api/autocomplete", { q: value })
+
+    if (autocomplete.error) {
+      return
+    }
+
+    setAutocompleteList(autocomplete)
   }
 
   return (
@@ -75,8 +91,15 @@ function Navbar(props) {
             <input
               type="search"
               className={styles.searchBox}
+              onFocus={() => {
+                setInputFocused(true)
+              }}
+              onBlur={() => {
+                setInputFocused(false)
+              }}
               onChange={(e) => {
                 setSearchValue(e.target.value)
+                handleTextChange(e.target.value)
               }}
               value={searchValue}
               onKeyDown={(e) => {
@@ -102,6 +125,41 @@ function Navbar(props) {
               alt="search"
               onClick={go}
             />
+            <AnimatePresence>
+              {autocompleteList.length > 0 && inputFocused && (
+                <motion.div
+                  exit={{ opacity: 0, height: 0 }}
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: autocompleteList.length * 40 }}
+                  transition={{ duration: 0.3 }}
+                  onHoverStart={() => {
+                    setInputFocused(true)
+                  }}
+                  className={styles.autocompleteContainer}
+                >
+                  {autocompleteList.map((text) => {
+                    return (
+                      <motion.div
+                        exit={{ opacity: 0 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                        key={makeId(5)}
+                        className={styles.autocompleteLi}
+                        style={{ backgroundColor: "rgb(255, 255, 255)" }}
+                        whileTap={{ backgroundColor: "rgb(245, 245, 245)" }}
+                        whileHover={{ backgroundColor: "rgb(245, 245, 245)" }}
+                        onClick={() => {
+                          go(text)
+                        }}
+                      >
+                        {text}
+                      </motion.div>
+                    )
+                  })}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
         <motion.div

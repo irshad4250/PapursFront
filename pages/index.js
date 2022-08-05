@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Head from "next/head"
 import styles from "../styles/home.module.css"
 import funnelIcon from "../public/assets/icons/funnel.svg"
 import Image from "next/image"
 import NoInputNavbar from "../components/NoInputNavbar"
 import FilterBox from "../components/FilterBox"
-import { postReq } from "../Global/functions"
+import { postReq, makeId } from "../Global/functions"
 import Block from "../components/Ads/Block"
-import Plaque from "../components/Ads/Plaque"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function Home() {
   const [showFilter, setShowFilter] = useState(false)
@@ -19,12 +19,15 @@ export default function Home() {
 
   const [searchValue, setSearchValue] = useState("")
 
+  const [inputFocused, setInputFocused] = useState(false)
+  const [autocompleteList, setAutocompleteList] = useState([])
+
   function handleUpdate(subject, year, level) {
     setFilterObj({ year: year, subject: subject, level: level })
     setShowFilter(false)
   }
 
-  function go() {
+  function go(value) {
     if (!searchValue) {
       return
     }
@@ -33,7 +36,7 @@ export default function Home() {
     const subjectGot = filterObj.subject
     const levelGot = filterObj.level
 
-    let url = `/Search?q=${encodeURIComponent(searchValue)}`
+    let url = `/Search?q=${encodeURIComponent(value ? value : searchValue)}`
 
     if (levelGot && levelGot != "Any") {
       url += `&exam=${levelGot}`
@@ -45,6 +48,20 @@ export default function Home() {
       url += `&year=${yearGot}`
     }
     window.location.href = url
+  }
+
+  async function handleTextChange(value) {
+    if (!value) {
+      setAutocompleteList([])
+      return
+    }
+    const autocomplete = await postReq("/api/autocomplete", { q: value })
+
+    if (autocomplete.error) {
+      return
+    }
+
+    setAutocompleteList(autocomplete)
   }
 
   return (
@@ -83,8 +100,15 @@ export default function Home() {
               type="search"
               className={styles.searchBox}
               placeholder="Type question"
+              onFocus={() => {
+                setInputFocused(true)
+              }}
+              onBlur={() => {
+                setInputFocused(false)
+              }}
               onChange={(e) => {
                 setSearchValue(e.target.value)
+                handleTextChange(e.target.value)
               }}
               value={searchValue}
               onKeyDown={(e) => {
@@ -107,12 +131,53 @@ export default function Home() {
             </div>
           </div>
 
+          <AnimatePresence>
+            {autocompleteList.length > 0 && inputFocused && (
+              <motion.div
+                exit={{ opacity: 0, height: 0 }}
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: autocompleteList.length * 40 }}
+                transition={{ duration: 0.3 }}
+                onHoverStart={() => {
+                  setInputFocused(true)
+                }}
+                className={styles.autocompleteContainer}
+              >
+                {autocompleteList.map((text) => {
+                  return (
+                    <motion.div
+                      exit={{ opacity: 0 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.2 }}
+                      key={makeId(5)}
+                      className={styles.autocompleteLi}
+                      style={{ backgroundColor: "rgb(255, 255, 255)" }}
+                      whileTap={{ backgroundColor: "rgb(245, 245, 245)" }}
+                      whileHover={{ backgroundColor: "rgb(245, 245, 245)" }}
+                      onClick={() => {
+                        go(text)
+                      }}
+                    >
+                      {text}
+                    </motion.div>
+                  )
+                })}
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           <div className={styles.searchButton} onClick={go}>
             Search
           </div>
           <Block />
           <div className={styles.howToUseBox}>
-            <h2>Coming soon, Autocomplete</h2>
+            <h2>New feature: Autocomplete</h2>
+            <div>
+              Added autocomplete to search bar. You can now view text
+              predictions while you type. This make searching questions more
+              effective.
+            </div>
             <h2>How to use</h2>
             <div>1. Enter question. For example: what is a mole.</div>
             <div>2. Press search.</div>
