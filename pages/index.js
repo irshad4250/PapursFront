@@ -179,7 +179,7 @@ export default function Home() {
           <div
             className={styles.searchButton}
             onClick={() => {
-              go
+              go()
             }}
           >
             Search
