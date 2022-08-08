@@ -18,16 +18,16 @@ function SearchResult(props) {
   }
 
   function msClicked() {
-    if (showAds.ms) {
-      window.open(adUrl, "_blank")
-    }
+    // if (showAds.ms) {
+    //   window.open(adUrl, "_blank")
+    // }
     setShowAds({ ms: false, qp: false })
   }
 
   function qpClicked() {
-    if (showAds.qp) {
-      window.open(adUrl, "_blank")
-    }
+    // if (showAds.qp) {
+    //   window.open(adUrl, "_blank")
+    // }
     setShowAds({ ms: false, qp: false })
   }
 
