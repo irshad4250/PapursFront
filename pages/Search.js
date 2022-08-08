@@ -70,7 +70,6 @@ export async function getServerSideProps(context) {
     results = []
   }
 
-  console.log(results)
   if (results.length == 0 || results.results.length == 0) {
     return {
       props: {
