@@ -86,6 +86,10 @@ function PastPapers(props) {
       <Head>
         <title>Past Papers Navigator</title>
         <meta
+          name="description"
+          content="Browse cambridge A level and O Level past papers. Papurs Past papers Navigator."
+        />
+        <meta
           httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         ></meta>

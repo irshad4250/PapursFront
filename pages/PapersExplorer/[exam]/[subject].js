@@ -11,7 +11,7 @@ function index({ subject, years, level }) {
       <Head>
         <meta
           name="description"
-          content={`Explorer cambridge ${level} level ${subject} past papers, view mark schemes and question paper`}
+          content={`Explore cambridge ${level} level ${subject} past papers, view mark schemes and question paper`}
         />
         <meta
           name="keywords"
