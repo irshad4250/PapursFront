@@ -80,9 +80,9 @@ export async function getServerSideProps(context) {
     }
   }
 
-  if (results.results.length >= 3) {
-    results.results.splice(2, 0, "ads")
-  }
+  // if (results.results.length >= 3) {
+  //   results.results.splice(2, 0, "ads")
+  // }
 
   return {
     props: {

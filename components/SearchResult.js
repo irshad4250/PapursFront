@@ -4,7 +4,6 @@ import Image from "next/image"
 import PaperClipIcon from "../public/assets/icons/paperclip.svg"
 import PenIcon from "../public/assets/icons/pen.svg"
 import StickiesIcon from "../public/assets/icons/stickies.svg"
-import AdsSearch from "../components/Ads/AdsSearch"
 
 function SearchResult(props) {
   const [showAds, setShowAds] = useState({
@@ -32,13 +31,13 @@ function SearchResult(props) {
     setShowAds({ ms: false, qp: false })
   }
 
-  if (props.type == "ads") {
-    return (
-      <div className={styles.adsContainer}>
-        <AdsSearch />
-      </div>
-    )
-  }
+  // if (props.type == "ads") {
+  //   return (
+  //     <div className={styles.adsContainer}>
+  //       <AdsSearch />
+  //     </div>
+  //   )
+  // }
 
   return (
     <div className={styles.resultBox}>
