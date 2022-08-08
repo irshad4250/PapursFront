@@ -4,11 +4,17 @@ import Image from "next/image"
 import PaperClipIcon from "../public/assets/icons/paperclip.svg"
 import PenIcon from "../public/assets/icons/pen.svg"
 import StickiesIcon from "../public/assets/icons/stickies.svg"
-
-const adUrl =
-  "https://www.amazon.com/gp/search?ie=UTF8&tag=irshad090-20&linkCode=ur2&linkId=08b918f5dc7d7a1bf52cda2256a5e751&camp=1789&creative=9325&index=mobile&keywords=Apple"
+import AdsSearch from "../components/Ads/AdsSearch"
 
 function SearchResult(props) {
+  if (props.type == "ads") {
+    return (
+      <div className={styles.adsContainer}>
+        <AdsSearch />
+      </div>
+    )
+  }
+
   const [showAds, setShowAds] = useState({
     // ms: getRndInteger(1, 3) == 1 ? true : false,
     // qp: getRndInteger(1, 3) == 1 ? true : false,

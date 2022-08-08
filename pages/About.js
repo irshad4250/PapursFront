@@ -14,14 +14,19 @@ function About(props) {
         <h1 className={styles.title}>About Us</h1>
       </div>
       <p className={styles.paragraph}>
-        Papurs is a website that searches past exam papers, mainly cambridge
-        examinations. You simply enter a question and we will show you relevant
-        papers that matches the search.
+        Papurs is a website that searches past exam papers, mainly cambridge A
+        and O level examinations. You simply enter a question and we will show
+        you relevant papers that matches the search.
       </p>
       <p className={styles.paragraph}>
         This website was designed to help students learn more about their
         subjects. The search results will bring the question papers and mark
         schemes in order to help them know the answers.
+      </p>
+      <p className={styles.paragraph}>
+        You can also view A level and O level past papers. The papers navigator
+        is a simple and fast tool to view past papers. Click on past papers to
+        try.
       </p>
       <p className={styles.paragraph}>
         Papurs was first created in 2022, we plan on adding more papers to

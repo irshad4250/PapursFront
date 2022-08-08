@@ -164,6 +164,18 @@
   cursor: pointer;
 }
 
+.aboutHref {
+  margin: auto;
+  width: fit-content;
+  text-decoration: underline;
+  font-family: var(--fontAccent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 @media screen and (max-width: 600px) {
   .autocompleteContainer {
     width: 95.5%;

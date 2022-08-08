@@ -7,6 +7,7 @@ import NoInputNavbar from "../components/NoInputNavbar"
 import FilterBox from "../components/FilterBox"
 import { postReq, makeId } from "../Global/functions"
 import Block from "../components/Ads/Block"
+import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 
 export default function Home() {
@@ -89,7 +90,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content="Search examination questions and find out which year they belong to. View the question papers and mark schemes."
+          content="Search cambridge A level and O levek examination questions and find out which year they belong to. View the question papers and mark schemes. You can also view past papers."
         />
         <meta
           name="keywords"
@@ -184,6 +185,11 @@ export default function Home() {
           >
             Search
           </div>
+          <Link href="/About">
+            <a className={styles.aboutHref}>
+              <div>What is papurs.com?</div>
+            </a>
+          </Link>
           <Block />
           <div className={styles.howToUseBox}>
             <h2>New feature: Autocomplete</h2>
@@ -218,6 +224,9 @@ export default function Home() {
               search to only show chemistry papers and even the year you want.
             </div>
             <h2>New Update</h2>
+            <div>
+              Search algorithm has been improved. Search results are now better.
+            </div>
             <div>
               Added autocomplete to search bar. You can now view text
               predictions while you type. This make searching questions more

@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar"
 import SearchResult from "../components/SearchResult"
 import { makeId } from "../Global/functions"
 import axios from "axios"
+import Plaque from "../components/Ads/Plaque"
 
 function Search(props) {
   return (
@@ -17,6 +18,7 @@ function Search(props) {
       </Head>
       <Navbar q={props.q} />
       <div className="main">
+        <Plaque />
         {props.empty && (
           <>
             <style jsx>{`
@@ -34,6 +36,7 @@ function Search(props) {
         {props.results.map((result) => {
           return (
             <SearchResult
+              type={result}
               title={result.title}
               subject={result.subject}
               qpLink={result.qpLink}
@@ -67,7 +70,8 @@ export async function getServerSideProps(context) {
     results = []
   }
 
-  if (results.length == 0) {
+  console.log(results)
+  if (results.length == 0 || results.results.length == 0) {
     return {
       props: {
         empty: true,
@@ -75,6 +79,10 @@ export async function getServerSideProps(context) {
         q: q,
       },
     }
+  }
+
+  if (results.results.length >= 3) {
+    results.results.splice(2, 0, "ads")
   }
 
   return {

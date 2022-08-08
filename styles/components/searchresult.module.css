@@ -97,9 +97,20 @@
   padding: 3px;
 }
 
+.adsContainer {
+  height: 130px;
+  width: 500px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 @media screen and (max-width: 800px) {
   .resultBox {
     width: 100%;
     border-radius: 0;
+  }
+  .adsContainer {
+    width: 100%;
   }
 }

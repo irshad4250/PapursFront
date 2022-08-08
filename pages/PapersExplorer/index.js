@@ -19,6 +19,7 @@ function index(props) {
         <title>Papers Explorer</title>
       </Head>
       <NoInputNavbar />
+
       <h1
         style={{
           marginTop: 10,
