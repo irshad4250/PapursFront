@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
 <url>
-  <loc></loc>
-  <lastmod>2022-08-08</lastmod>
-</url>
-</urlset><?xml version="1.0" encoding="UTF-8"?> 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
-<url>
   <loc>https://www.papurs.com/</loc>
   <lastmod>2022-08-08</lastmod>
 </url>
@@ -1447,7 +1441,7 @@
   <lastmod>2022-08-08</lastmod>
 </url>
 <url>
-  <loc>https://www.papurs.com/PastPapers/Papers?subject=Physics%20(5054)&year=2014</loc>
+  <loc>https://www.papurs.com/PastPapers/Papers?subject=Physics%20(5054)&amp;year=2014</loc>
   <lastmod>2022-08-08</lastmod>
 </url>
 <url>
