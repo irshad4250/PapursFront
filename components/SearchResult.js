@@ -7,14 +7,6 @@ import StickiesIcon from "../public/assets/icons/stickies.svg"
 import AdsSearch from "../components/Ads/AdsSearch"
 
 function SearchResult(props) {
-  if (props.type == "ads") {
-    return (
-      <div className={styles.adsContainer}>
-        <AdsSearch />
-      </div>
-    )
-  }
-
   const [showAds, setShowAds] = useState({
     // ms: getRndInteger(1, 3) == 1 ? true : false,
     // qp: getRndInteger(1, 3) == 1 ? true : false,
@@ -38,6 +30,14 @@ function SearchResult(props) {
       window.open(adUrl, "_blank")
     }
     setShowAds({ ms: false, qp: false })
+  }
+
+  if (props.type == "ads") {
+    return (
+      <div className={styles.adsContainer}>
+        <AdsSearch />
+      </div>
+    )
   }
 
   return (
