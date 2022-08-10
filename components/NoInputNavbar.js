@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styles from "../styles/components/noinputnavbar.module.css"
 import Link from "next/link"
 import { motion } from "framer-motion"
@@ -6,13 +6,18 @@ import ListIcon from "../public/assets/icons/list.png"
 import Image from "next/image"
 
 function NoInputNavbar(props) {
-  const [navbarTop, setNavbarTop] = useState("100%")
+  useEffect(() => {
+    setStyle("flex")
+  }, [])
+
+  const [style, setStyle] = useState("none")
+  const [navbarRight, setNavbarRight] = useState("100%")
 
   function menuClicked() {
-    if (navbarTop == 0) {
-      setNavbarTop("100%")
+    if (navbarRight == "40%") {
+      setNavbarRight("100%")
     } else {
-      setNavbarTop(0)
+      setNavbarRight("40%")
     }
   }
 
@@ -23,10 +28,11 @@ function NoInputNavbar(props) {
       </Link>
 
       <motion.ul
+        style={{ display: style }}
         animate={{
-          top: navbarTop,
+          right: navbarRight,
         }}
-        transition={{ bounce: 1, duration: 0.7 }}
+        transition={{ duration: 0.5 }}
         className={styles.navbarUl}
       >
         <li className={styles.close} onClick={menuClicked}>

@@ -12,6 +12,7 @@
 }
 
 .navbar > ul {
+  right: 100%;
   margin: 0;
   padding: 0;
   display: flex;
@@ -52,17 +53,25 @@
 
 @media screen and (max-width: 768px) {
   .navbar > ul {
+    top: 0;
     position: fixed;
-    top: 100%;
-    left: 0;
-    width: 100vw;
+    right: 100%;
+    width: 60vw;
     height: 100vh;
     z-index: 110;
     background-color: var(--colorAccent);
     flex-direction: column;
-    align-items: center;
-    justify-content: start;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-right: 0;
+    box-sizing: border-box;
+    border-right: solid 1px whitesmoke;
   }
+
+  .navbarUl > li {
+    margin-left: 30px;
+  }
+
   .burger {
     display: flex;
   }

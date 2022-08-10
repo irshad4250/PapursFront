@@ -27,6 +27,12 @@ function News(props) {
       /> */}
 
       <NewsComponent
+        title={"Papurs Update V 1.0"}
+        body={"Papurs is now officially released."}
+        date={"10/08/2022"}
+      />
+
+      <NewsComponent
         title={"Papurs Update V 0.8"}
         body={
           "Search algorithm has been improved. We made use of several analyzers and algorithms to bring out the best search results."
@@ -62,13 +68,6 @@ function News(props) {
           "You can now view a peek of the paper in search results if the paper contain your search text."
         }
         date={"23/07/2022"}
-      />
-      <NewsComponent
-        title={"Papurs is still in demo."}
-        body={
-          "Search results are not guaranteed to be accurate since the app is still in demo. There might be bugs and unfinished places in the website. Papurs will be released soon."
-        }
-        date={"11/07/2022"}
       />
     </div>
   )

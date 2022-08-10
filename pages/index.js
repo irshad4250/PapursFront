@@ -53,6 +53,21 @@ export default function Home() {
     window.location.href = url
   }
 
+  async function handleTextChange2() {
+    if (fetching) {
+      return
+    }
+
+    setFetching(true)
+    const autocomplete = await postReq("/api/autocomplete", { q: value })
+    setFetching(false)
+
+    if (autocomplete.error) {
+      return
+    }
+
+    setAutocompleteList(autocomplete)
+  }
   async function handleTextChange(value) {
     if (!value) {
       setAutocompleteList([])
@@ -156,9 +171,7 @@ export default function Home() {
                 {autocompleteList.map((text) => {
                   return (
                     <motion.div
-                      exit={{ opacity: 0 }}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
+                      initial={{ opacity: 1 }}
                       transition={{ duration: 0.2 }}
                       key={makeId(5)}
                       className={styles.autocompleteLi}
@@ -190,8 +203,13 @@ export default function Home() {
               <div>What is papurs.com?</div>
             </a>
           </Link>
+
           <Block />
           <div className={styles.howToUseBox}>
+            <div>
+              Papurs.com is no longer in beta and is now officially released.
+              Meaning search are 100% accurate and bugs have been fixed.
+            </div>
             <h2>New feature: Autocomplete</h2>
             <div>
               Added autocomplete to search bar. You can now view text

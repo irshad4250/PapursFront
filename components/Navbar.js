@@ -150,10 +150,8 @@ function Navbar(props) {
                   {autocompleteList.map((text) => {
                     return (
                       <motion.div
-                        exit={{ opacity: 0 }}
-                        initial={{ opacity: 0 }}
+                        initial={{ opacity: 1 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 0.2 }}
                         key={makeId(5)}
                         className={styles.autocompleteLi}
                         style={{ backgroundColor: "rgb(255, 255, 255)" }}
@@ -177,7 +175,7 @@ function Navbar(props) {
           animate={{
             top: navbarTop,
           }}
-          transition={{ bounce: 1, duration: 0.7 }}
+          transition={{ duration: 0.25 }}
         >
           <ul>
             <li className={styles.closeNavButton} onClick={menuClicked}>
