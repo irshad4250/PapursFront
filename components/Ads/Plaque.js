@@ -8,7 +8,7 @@ function Plaque() {
   }, [])
 
   return (
-    <div className="divMargin">
+    <div className="divMargin" style={{ height: 130 }}>
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
