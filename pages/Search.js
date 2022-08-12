@@ -10,10 +10,6 @@ function Search(props) {
   return (
     <div>
       <Head>
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="upgrade-insecure-requests"
-        ></meta>
         <title>{"Papurs | " + props.q}</title>
       </Head>
       <Navbar q={props.q} />
@@ -36,7 +32,6 @@ function Search(props) {
         {props.results.map((result) => {
           return (
             <SearchResult
-              type={result}
               title={result.title}
               subject={result.subject}
               qpLink={result.qpLink}
