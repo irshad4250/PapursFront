@@ -14,7 +14,7 @@ function Search(props) {
       </Head>
       <Navbar q={props.q} />
       <div className="main">
-        {/* <Plaque /> */}
+        <Plaque />
         {props.empty && (
           <>
             <style jsx>{`
