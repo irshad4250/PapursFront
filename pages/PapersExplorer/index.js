@@ -3,6 +3,7 @@ import NoInputNavbar from "../../components/NoInputNavbar"
 import ExplorerBar from "../../components/ExplorerBar"
 import styles from "../../styles/papersexplorer.module.css"
 import Head from "next/head"
+import Plaque from "../../components/Ads/Plaque"
 
 function index(props) {
   return (
@@ -33,6 +34,7 @@ function index(props) {
       <ul className={styles.explorerUl}>
         <ExplorerBar href={"/PapersExplorer/A"} label="A Level" />
         <ExplorerBar href={"/PapersExplorer/O"} label="O Level" />
+        <Plaque />
       </ul>
     </div>
   )

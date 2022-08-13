@@ -4,6 +4,7 @@ import styles from "../../../styles/papersexplorer.module.css"
 import NoInputNavbar from "../../../components/NoInputNavbar"
 import { postReq } from "../../../Global/functions"
 import Head from "next/head"
+import Plaque from "../../../components/Ads/Plaque"
 
 function index({ subjects, level }) {
   return (
@@ -32,6 +33,7 @@ function index({ subjects, level }) {
               />
             )
           })}
+        <Plaque />
       </ul>
     </div>
   )

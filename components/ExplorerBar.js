@@ -15,6 +15,8 @@ function ExplorerBar({ href, label }) {
               src={ArchiveLogo}
               width={32}
               height={32}
+              priority={true}
+              loading={"eager"}
             />
           </div>
           <div className={styles.label}>{label}</div>
