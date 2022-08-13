@@ -11,7 +11,7 @@ function Plaque() {
     <div className="divMargin" style={{ height: 100, width: 350 }}>
       <ins
         className="adsbygoogle"
-        style={{ display: "block" }}
+        style={{ display: "block", height: 100, width: 350 }}
         data-ad-client="ca-pub-8618691594432056"
         data-ad-slot="6868132156"
         data-ad-format="auto"
