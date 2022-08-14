@@ -43,6 +43,7 @@ function ViewPdf(props) {
         className={styles.downloadButton}
         href={props.pdfUrl}
         target="_blank"
+        rel="noreferrer"
         download
       >
         <div>
