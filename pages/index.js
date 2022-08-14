@@ -242,6 +242,7 @@ export default function Home() {
               search to only show chemistry papers and even the year you want.
             </div>
             <h2>New Update</h2>
+            <div>Added download button when viewing papers.</div>
             <div>
               Search algorithm has been improved. Search results are now better.
             </div>

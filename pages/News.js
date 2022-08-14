@@ -25,7 +25,11 @@ function News(props) {
         }
         date={"03/08/2022"}
       /> */}
-
+      <NewsComponent
+        title={"Papurs Update V 1.0.1"}
+        body={"Added download button when viewing papers."}
+        date={"14/08/2022"}
+      />
       <NewsComponent
         title={"Papurs Update V 1.0"}
         body={"Papurs is now officially released."}

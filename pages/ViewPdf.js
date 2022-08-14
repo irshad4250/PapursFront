@@ -6,6 +6,8 @@ import { Worker, Viewer } from "@react-pdf-viewer/core"
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout"
 import { getFilePlugin } from "@react-pdf-viewer/get-file"
 import { postReq } from "../Global/functions"
+import Image from "next/image"
+import DownloadIcon from "../public/assets/icons/download.svg"
 
 import "@react-pdf-viewer/core/lib/styles/index.css"
 import "@react-pdf-viewer/default-layout/lib/styles/index.css"
@@ -36,6 +38,17 @@ function ViewPdf(props) {
           Reload page if paper is not loaded.
         </div>
       </div>
+
+      <a
+        className={styles.downloadButton}
+        href={props.pdfUrl}
+        target="_blank"
+        download
+      >
+        <div>
+          <Image width={30} height={30} src={DownloadIcon} />
+        </div>
+      </a>
 
       <iframe
         src={`https://docs.google.com/viewerng/viewer?url=${props.pdfUrl}&embedded=true`}

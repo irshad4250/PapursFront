@@ -16,7 +16,7 @@ class MyDocument extends Document {
           <Script
             id="Adsense-id"
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8618691594432056"
-            // async={true}
+            async={true}
             strategy={"afterInteractive"}
           />
         </Head>
