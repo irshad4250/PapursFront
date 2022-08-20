@@ -9,6 +9,9 @@ import FilterBox from "../components/FilterBox"
 import { motion, AnimatePresence } from "framer-motion"
 import ListIcon from "../public/assets/icons/list.png"
 
+let searchValue = ""
+let previousVal = ""
+
 function Navbar(props) {
   const [navbarTop, setNavbarTop] = useState("100%")
   const [showFilter, setShowFilter] = useState(false)
@@ -17,7 +20,6 @@ function Navbar(props) {
     subject: "Any",
     level: "Any",
   })
-  const [searchValue, setSearchValue] = useState(props.q)
 
   const [inputFocused, setInputFocused] = useState(false)
   const [autocompleteList, setAutocompleteList] = useState([])
@@ -59,25 +61,32 @@ function Navbar(props) {
     setShowFilter(false)
   }
 
-  async function handleTextChange(value) {
+  async function handleTextChange(value, ignoreFetch) {
     if (!value) {
       setAutocompleteList([])
       return
     }
 
-    if (fetching) {
+    if (!ignoreFetch && fetching) {
       return
     }
 
     setFetching(true)
+
+    previousVal = value
     const autocomplete = await postReq("/api/autocomplete", { q: value })
-    setFetching(false)
 
     if (autocomplete.error) {
       return
     }
 
     setAutocompleteList(autocomplete)
+
+    if (previousVal != searchValue) {
+      await handleTextChange(searchValue, true)
+    }
+
+    setFetching(false)
   }
 
   return (
@@ -106,10 +115,10 @@ function Navbar(props) {
                 setInputFocused(false)
               }}
               onChange={(e) => {
-                setSearchValue(e.target.value)
+                searchValue = e.target.value
                 handleTextChange(e.target.value)
               }}
-              value={searchValue}
+              defaultValue={props.q}
               onKeyDown={(e) => {
                 if (e.key == "Enter") {
                   go()

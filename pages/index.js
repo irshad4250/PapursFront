@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Head from "next/head"
 import styles from "../styles/home.module.css"
 import funnelIcon from "../public/assets/icons/funnel.svg"
@@ -10,6 +10,9 @@ import Block from "../components/Ads/Block"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 
+let searchValue = ""
+let previousVal = ""
+
 export default function Home() {
   const [showFilter, setShowFilter] = useState(false)
   const [filterObj, setFilterObj] = useState({
@@ -17,8 +20,6 @@ export default function Home() {
     subject: "Any",
     level: "Any",
   })
-
-  const [searchValue, setSearchValue] = useState("")
 
   const [inputFocused, setInputFocused] = useState(false)
   const [autocompleteList, setAutocompleteList] = useState([])
@@ -53,40 +54,32 @@ export default function Home() {
     window.location.href = url
   }
 
-  async function handleTextChange2() {
-    if (fetching) {
-      return
-    }
-
-    setFetching(true)
-    const autocomplete = await postReq("/api/autocomplete", { q: value })
-    setFetching(false)
-
-    if (autocomplete.error) {
-      return
-    }
-
-    setAutocompleteList(autocomplete)
-  }
-  async function handleTextChange(value) {
+  async function handleTextChange(value, ignoreFetch) {
     if (!value) {
       setAutocompleteList([])
       return
     }
 
-    if (fetching) {
+    if (!ignoreFetch && fetching) {
       return
     }
 
     setFetching(true)
+
+    previousVal = value
     const autocomplete = await postReq("/api/autocomplete", { q: value })
-    setFetching(false)
 
     if (autocomplete.error) {
       return
     }
 
     setAutocompleteList(autocomplete)
+
+    if (previousVal != searchValue) {
+      await handleTextChange(searchValue, true)
+    }
+
+    setFetching(false)
   }
 
   return (
@@ -132,10 +125,9 @@ export default function Home() {
                 setInputFocused(false)
               }}
               onChange={(e) => {
-                setSearchValue(e.target.value)
+                searchValue = e.target.value
                 handleTextChange(e.target.value)
               }}
-              value={searchValue}
               onKeyDown={(e) => {
                 if (e.key == "Enter") {
                   go()
