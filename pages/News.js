@@ -11,13 +11,7 @@ function News(props) {
       </Head>
       <NoInputNavbar />
       <h1 className="title">Papurs News</h1>
-      {/* <NewsComponent
-        title={"Coming soon"}
-        body={
-          "Autocomplete. We believe autocomplete will be extremely useful and faster when searching."
-        }
-        date={"03/08/2022"}
-      />
+      {/* 
       <NewsComponent
         title={"Papurs Update V 0.7"}
         body={
@@ -25,6 +19,13 @@ function News(props) {
         }
         date={"03/08/2022"}
       /> */}
+      <NewsComponent
+        title={"Papurs Update V 1.0.3"}
+        body={
+          "Added a loading spinner to search box to indicate that autocomplete is fetching."
+        }
+        date={"20/08/2022"}
+      />
       <NewsComponent
         title={"Papurs Update V 1.0.2"}
         body={"Improved autocomplete."}

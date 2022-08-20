@@ -125,6 +125,16 @@ function Navbar(props) {
                 }
               }}
             />
+            {fetching && (
+              <div className={styles.loaderContainer}>
+                <div className={styles["lds-ring"]}>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            )}
             <Image
               src={FunnelIcon}
               width={30}

@@ -134,6 +134,18 @@ export default function Home() {
                 }
               }}
             />
+
+            {fetching && (
+              <div className={styles.loaderContainer}>
+                <div className={styles["lds-ring"]}>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            )}
+
             <div className={styles.filterIconContainer}>
               <Image
                 src={funnelIcon}
