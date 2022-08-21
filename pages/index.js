@@ -135,16 +135,28 @@ export default function Home() {
               }}
             />
 
-            {fetching && (
-              <div className={styles.loaderContainer}>
-                <div className={styles["lds-ring"]}>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
-              </div>
-            )}
+            <AnimatePresence>
+              {fetching && (
+                <motion.div
+                  className={styles.loaderContainer}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <motion.div
+                    className={styles["lds-ring"]}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    exit={{ scale: 0 }}
+                  >
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             <div className={styles.filterIconContainer}>
               <Image
