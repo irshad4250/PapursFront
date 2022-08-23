@@ -3,6 +3,7 @@ import styles from "../../styles/pastpapers.module.css"
 import NoInputNavbar from "../../components/NoInputNavbar"
 import { getSubjects, getYears } from "../../Global/functions"
 import Head from "next/head"
+import Plaque from "../../components/Ads/Plaque"
 
 function PastPapers(props) {
   const [subjects, setSubjects] = useState([])
@@ -95,6 +96,7 @@ function PastPapers(props) {
         ></meta>
       </Head>
       <NoInputNavbar />
+      <Plaque />
       <h1 style={{ marginTop: 20, textAlign: "center" }}>
         Past Papers Navigator
       </h1>

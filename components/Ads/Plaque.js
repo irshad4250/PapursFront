@@ -8,14 +8,16 @@ function Plaque() {
   }, [])
 
   return (
-    <div className="divMargin" style={{ height: 100, width: 350 }}>
+    <div className="divMargin">
       <ins
         className="adsbygoogle"
-        style={{ display: "block", height: 100, width: 350 }}
+        style={{
+          display: "inline-block",
+          width: 300,
+          height: 90,
+        }}
         data-ad-client="ca-pub-8618691594432056"
-        data-ad-slot="6868132156"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
+        data-ad-slot="3322300084"
       ></ins>
     </div>
   )
