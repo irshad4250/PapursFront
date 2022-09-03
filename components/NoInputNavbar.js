@@ -35,9 +35,6 @@ function NoInputNavbar(props) {
         transition={{ duration: 0.5 }}
         className={styles.navbarUl}
       >
-        <li className={styles.close} onClick={menuClicked}>
-          Close
-        </li>
         <li>
           <Link href="/">
             <a>Home</a>
@@ -70,14 +67,32 @@ function NoInputNavbar(props) {
         </li>
       </motion.ul>
       <div className={styles.burger} onClick={menuClicked}>
-        <Image
+        {/* <Image
           priority={true}
           quality={100}
           src={ListIcon}
           alt={"Menu button"}
           width={41}
           height={41}
-        />
+        /> */}
+        <motion.div
+          className={styles.burgerLines}
+          style={{ originX: 0.2, originY: 1.2 }}
+          animate={{ rotate: navbarRight == "100%" ? 0 : 45 }}
+        ></motion.div>
+        <motion.div
+          className={styles.burgerLines}
+          style={{ originX: 0.5 }}
+          animate={{
+            opacity: navbarRight == "100%" ? 1 : 0,
+            translateX: navbarRight == "100%" ? 0 : 100,
+          }}
+        ></motion.div>
+        <motion.div
+          className={styles.burgerLines}
+          style={{ originX: 0.2, originY: -0.2 }}
+          animate={{ rotate: navbarRight == "100%" ? 0 : -45 }}
+        ></motion.div>
       </div>
     </nav>
   )
