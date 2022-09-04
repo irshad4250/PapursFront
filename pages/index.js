@@ -219,6 +219,11 @@ export default function Home() {
               <div>What is papurs.com?</div>
             </a>
           </Link>
+          <Link href="https://www.instagram.com/pap.urs/">
+            <a className={styles.aboutHref}>
+              <div>Follow us on instagram for updates!</div>
+            </a>
+          </Link>
 
           <Block />
           <div className={styles.howToUseBox}>
