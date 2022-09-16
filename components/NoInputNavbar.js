@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react"
 import styles from "../styles/components/noinputnavbar.module.css"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import ListIcon from "../public/assets/icons/list.png"
+import HomeIcon from "../public/assets/tab/home.svg"
+import NewsIcon from "../public/assets/tab/news.svg"
+import PapersIcon from "../public/assets/tab/papers.svg"
+import ExplorerIcon from "../public/assets/tab/explorer.svg"
 import Image from "next/image"
 
 function NoInputNavbar(props) {
@@ -36,21 +39,61 @@ function NoInputNavbar(props) {
         className={styles.navbarUl}
       >
         <li>
+          <div className={styles.tabIcons}>
+            <Image
+              priority={true}
+              quality={100}
+              src={HomeIcon}
+              alt={"Home"}
+              width={35}
+              height={35}
+            />
+          </div>
           <Link href="/">
             <a>Home</a>
           </Link>
         </li>
         <li>
+          <div className={styles.tabIcons}>
+            <Image
+              priority={true}
+              quality={100}
+              src={NewsIcon}
+              alt={"News"}
+              width={35}
+              height={35}
+            />
+          </div>
           <Link href="/News">
             <a>News</a>
           </Link>
         </li>
         <li>
+          <div className={styles.tabIcons}>
+            <Image
+              priority={true}
+              quality={100}
+              src={PapersIcon}
+              alt={"Past Papers"}
+              width={35}
+              height={35}
+            />
+          </div>
           <Link href="/PastPapers">
             <a>Past papers</a>
           </Link>
         </li>
         <li>
+          <div className={styles.tabIcons}>
+            <Image
+              priority={true}
+              quality={100}
+              src={ExplorerIcon}
+              alt={"Past Papers Explorer"}
+              width={35}
+              height={35}
+            />
+          </div>
           <Link href="/PapersExplorer">
             <a>Papers explorer</a>
           </Link>
@@ -77,7 +120,7 @@ function NoInputNavbar(props) {
         /> */}
         <motion.div
           className={styles.burgerLines}
-          style={{ originX: 0.2, originY: 1.2 }}
+          style={{ originX: 0.1 }}
           animate={{ rotate: navbarRight == "100%" ? 0 : 45 }}
         ></motion.div>
         <motion.div
@@ -90,7 +133,7 @@ function NoInputNavbar(props) {
         ></motion.div>
         <motion.div
           className={styles.burgerLines}
-          style={{ originX: 0.2, originY: -0.2 }}
+          style={{ originX: 0.1 }}
           animate={{ rotate: navbarRight == "100%" ? 0 : -45 }}
         ></motion.div>
       </div>
