@@ -35,6 +35,8 @@ function About(props) {
       </p>
 
       <p className={styles.paragraph}>Papurs is located in Mauritius.</p>
+
+      <p className={styles.paragraph}>Papurs is owned by Hassly</p>
     </div>
   )
 }

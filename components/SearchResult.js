@@ -4,6 +4,7 @@ import Image from "next/image"
 import PaperClipIcon from "../public/assets/icons/paperclip.svg"
 import PenIcon from "../public/assets/icons/pen.svg"
 import StickiesIcon from "../public/assets/icons/stickies.svg"
+import PaperIcon from "../public/assets/icons/paper.svg"
 
 function SearchResult(props) {
   // if (props.type == "ads") {
@@ -19,9 +20,11 @@ function SearchResult(props) {
       <div className={styles.resultTitle}>
         <Image
           className={styles.resultTitleIcon}
-          width={22}
-          height={22}
-          src={StickiesIcon}
+          width={32}
+          height={32}
+          src={PaperIcon}
+          priority={true}
+          quality={100}
           alt="Paper icon"
         />
         {props.title}
@@ -47,6 +50,7 @@ function SearchResult(props) {
           />
           <div>View Question paper</div>
         </a>
+        <div className={styles.linkSeperator}></div>
         <a
           className={styles.linkRow + " " + styles.linkMark}
           href={props.msLink}

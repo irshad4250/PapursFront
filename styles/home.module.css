@@ -164,16 +164,33 @@
   cursor: pointer;
 }
 
-.aboutHref {
-  margin: auto;
-  width: fit-content;
-  text-decoration: underline;
-  font-family: var(--fontAccent);
+.homeHrefBox {
+  margin-top: 8px;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  gap: 10px;
+}
+
+.aboutHref {
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px whitesmoke;
+  padding: 5px;
+  font-family: var(--fontAccent);
+  transition: 300ms ease-in-out;
+}
+
+.aboutHref:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+.instaLogo {
+  transition: 150ms ease-out;
+}
+.instaLogo:hover {
+  transform: scale(1.1);
 }
 
 .loaderContainer {

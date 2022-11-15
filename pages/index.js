@@ -9,6 +9,7 @@ import { postReq, makeId } from "../Global/functions"
 import Block from "../components/Ads/Block"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
+import InstaIcon from "../public/assets/icons/instagram.png"
 
 let searchValue = ""
 let previousVal = ""
@@ -98,7 +99,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content="Search cambridge A level and O levek examination questions and find out which year they belong to. View the question papers and mark schemes. You can also view past papers."
+          content="Search cambridge A level and O level examination questions and find out which year they belong to. View the question papers and mark schemes. You can also view past papers."
         />
         <meta
           name="keywords"
@@ -214,16 +215,25 @@ export default function Home() {
           >
             Search
           </div>
-          <Link href="/About">
-            <a className={styles.aboutHref}>
-              <div>What is papurs.com?</div>
-            </a>
-          </Link>
-          <Link href="https://www.instagram.com/pap.urs/">
-            <a className={styles.aboutHref}>
-              <div>Follow us on instagram for updates!</div>
-            </a>
-          </Link>
+          <div className={styles.homeHrefBox}>
+            <Link href="/About">
+              <a className={styles.aboutHref}>
+                <div>What is papurs.com?</div>
+              </a>
+            </Link>
+            <Link href="https://www.instagram.com/pap.urs/">
+              <a className={styles.instaLogo}>
+                <Image
+                  priority={true}
+                  quality={100}
+                  src={InstaIcon}
+                  alt={"Instagram link"}
+                  width={35}
+                  height={35}
+                />
+              </a>
+            </Link>
+          </div>
 
           <Block />
           <div className={styles.howToUseBox}>

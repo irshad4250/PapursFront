@@ -8,6 +8,7 @@ import { getFilePlugin } from "@react-pdf-viewer/get-file"
 import { postReq } from "../Global/functions"
 import Image from "next/image"
 import DownloadIcon from "../public/assets/icons/download.svg"
+import { motion, AnimatePresence } from "framer-motion"
 
 import "@react-pdf-viewer/core/lib/styles/index.css"
 import "@react-pdf-viewer/default-layout/lib/styles/index.css"
@@ -16,6 +17,25 @@ import axios from "axios"
 function ViewPdf(props) {
   const getFilePluginInstance = getFilePlugin()
   const defaultLayoutPluginInstance = defaultLayoutPlugin()
+
+  const [warningBox, setWarningBox] = useState(
+    <motion.div
+      className={styles.warnBox}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <div className={styles.warnMessage}>
+        Reload page if paper is not loaded.
+      </div>
+    </motion.div>
+  )
+
+  useEffect(() => {
+    setTimeout(() => {
+      setWarningBox()
+    }, 2500)
+  }, [])
 
   return (
     <div className="main">
@@ -33,11 +53,7 @@ function ViewPdf(props) {
       </Head>
 
       <NoInputNavbar />
-      <div className={styles.warnBox}>
-        <div className={styles.warnMessage}>
-          Reload page if paper is not loaded.
-        </div>
-      </div>
+      <AnimatePresence>{warningBox}</AnimatePresence>
 
       <a
         className={styles.downloadButton}

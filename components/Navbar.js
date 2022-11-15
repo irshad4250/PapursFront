@@ -247,14 +247,17 @@ function Navbar(props) {
           </ul>
         </motion.div>
         <div className={styles.burgerContainer} onClick={menuClicked}>
-          <Image
+          {/* <Image
             priority={true}
             quality={100}
             src={ListIcon}
             alt={"Menu button"}
             width={41}
             height={41}
-          />
+          /> */}
+          <div className={styles.burgerLines}></div>
+          <div className={styles.burgerLines}></div>
+          <div className={styles.burgerLines}></div>
         </div>
       </nav>
     </>

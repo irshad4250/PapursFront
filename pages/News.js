@@ -20,6 +20,11 @@ function News(props) {
         date={"03/08/2022"}
       /> */}
       <NewsComponent
+        title={"Papurs Update V 1.1"}
+        body={"Changed user interface."}
+        date={"15/11/2022"}
+      />
+      <NewsComponent
         title={"Papurs Update V 1.0.3"}
         body={
           "Added a loading spinner to search box to indicate that autocomplete is fetching."
