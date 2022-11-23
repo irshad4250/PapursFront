@@ -74,8 +74,11 @@ function Navbar(props) {
     setFetching(true)
 
     previousVal = value
-    const autocomplete = await postReq("/api/autocomplete", { q: value })
 
+    const autocomplete = await postReq(
+      process.env.NEXT_PUBLIC_BACKEND_URL + "search/autocomplete",
+      { q: value }
+    )
     if (autocomplete.error) {
       return
     }
@@ -171,9 +174,9 @@ function Navbar(props) {
             <AnimatePresence>
               {autocompleteList.length > 0 && inputFocused && (
                 <motion.div
-                  exit={{ opacity: 0, height: 0 }}
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: autocompleteList.length * 40 }}
+                  exit={{ opacity: 0 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                   onHoverStart={() => {
                     setInputFocused(true)

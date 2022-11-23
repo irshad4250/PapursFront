@@ -53,6 +53,13 @@
   display: none;
 }
 
+.tabLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 .title {
   font-family: var(--titleFont);
   font-size: 35px;

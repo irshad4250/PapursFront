@@ -12,22 +12,28 @@ export function makeId(length) {
 
 export function getSubjects(level) {
   return new Promise(async (resolve, reject) => {
-    const subjects = await postReq("/api/getSubjects", { level: level })
+    const subjects = await postReq(
+      process.env.NEXT_PUBLIC_BACKEND_URL + "api/getSubjectsLevel",
+      { level: level }
+    )
     if (subjects.error) {
       resolve([])
     } else {
-      resolve(subjects)
+      resolve(subjects.data)
     }
   })
 }
 
 export function getYears(subject) {
   return new Promise(async (resolve, reject) => {
-    const years = await postReq("/api/getYears", { subject: subject })
+    const years = await postReq(
+      process.env.NEXT_PUBLIC_BACKEND_URL + "api/getYears",
+      { subject: subject }
+    )
     if (years.error) {
       resolve([])
     } else {
-      resolve(years)
+      resolve(years.data)
     }
   })
 }

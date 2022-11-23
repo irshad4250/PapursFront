@@ -68,7 +68,10 @@ export default function Home() {
     setFetching(true)
 
     previousVal = value
-    const autocomplete = await postReq("/api/autocomplete", { q: value })
+    const autocomplete = await postReq(
+      process.env.NEXT_PUBLIC_BACKEND_URL + "search/autocomplete",
+      { q: value }
+    )
 
     if (autocomplete.error) {
       return
@@ -105,10 +108,7 @@ export default function Home() {
           name="keywords"
           content="O-Level, A-Level, CIE, Past Papers,Search, Search Past Papers, Cambridge"
         />
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="upgrade-insecure-requests"
-        ></meta>
+
         <title>Papurs</title>
       </Head>
       <div className="main">
@@ -176,9 +176,9 @@ export default function Home() {
           <AnimatePresence>
             {autocompleteList.length > 0 && inputFocused && (
               <motion.div
-                exit={{ opacity: 0, height: 0 }}
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: autocompleteList.length * 40 }}
+                exit={{ opacity: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
                 onHoverStart={() => {
                   setInputFocused(true)
@@ -239,13 +239,11 @@ export default function Home() {
           <div className={styles.howToUseBox}>
             <div>
               Papurs.com is no longer in beta and is now officially released.
-              Meaning search are 100% accurate and bugs have been fixed.
             </div>
-            <h2>New feature: Autocomplete</h2>
+            <h2>New Update: New pdf viewer and UI updates,</h2>
             <div>
-              Added autocomplete to search bar. You can now view text
-              predictions while you type. This make searching questions more
-              effective.
+              Go try our pdf viewer. Zoom in, zoom our, search and download pdfs
+              easily.
             </div>
             <h2>How to use</h2>
             <div>1. Enter question. For example: what is a mole.</div>

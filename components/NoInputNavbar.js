@@ -39,63 +39,72 @@ function NoInputNavbar(props) {
         className={styles.navbarUl}
       >
         <li>
-          <div className={styles.tabIcons}>
-            <Image
-              priority={true}
-              quality={100}
-              src={HomeIcon}
-              alt={"Home"}
-              width={35}
-              height={35}
-            />
-          </div>
           <Link href="/">
-            <a>Home</a>
+            <a className={styles.tabLink}>
+              <div className={styles.tabIcons}>
+                <Image
+                  priority={true}
+                  quality={100}
+                  src={HomeIcon}
+                  alt={"Home"}
+                  width={35}
+                  height={35}
+                />
+              </div>
+              <div>Home</div>
+            </a>
           </Link>
         </li>
         <li>
-          <div className={styles.tabIcons}>
-            <Image
-              priority={true}
-              quality={100}
-              src={NewsIcon}
-              alt={"News"}
-              width={35}
-              height={35}
-            />
-          </div>
           <Link href="/News">
-            <a>News</a>
+            <a className={styles.tabLink}>
+              <div className={styles.tabIcons}>
+                <Image
+                  priority={true}
+                  quality={100}
+                  src={NewsIcon}
+                  alt={"News"}
+                  width={35}
+                  height={35}
+                />
+              </div>
+
+              <div>News</div>
+            </a>
           </Link>
         </li>
         <li>
-          <div className={styles.tabIcons}>
-            <Image
-              priority={true}
-              quality={100}
-              src={PapersIcon}
-              alt={"Past Papers"}
-              width={35}
-              height={35}
-            />
-          </div>
           <Link href="/PastPapers">
-            <a>Past papers</a>
+            <a className={styles.tabLink}>
+              <div className={styles.tabIcons}>
+                <Image
+                  priority={true}
+                  quality={100}
+                  src={PapersIcon}
+                  alt={"Past Papers"}
+                  width={35}
+                  height={35}
+                />
+              </div>
+              <div>Past papers</div>
+            </a>
           </Link>
         </li>
         <li>
-          <div className={styles.tabIcons}>
-            <Image
-              priority={true}
-              quality={100}
-              src={ExplorerIcon}
-              alt={"Past Papers Explorer"}
-              width={35}
-              height={35}
-            />
-          </div>
           <Link href="/PapersExplorer">
-            <a>Papers explorer</a>
+            <a className={styles.tabLink}>
+              <div className={styles.tabIcons}>
+                <Image
+                  priority={true}
+                  quality={100}
+                  src={ExplorerIcon}
+                  alt={"Past Papers Explorer"}
+                  width={35}
+                  height={35}
+                />
+              </div>
+              <div>Papers explorer</div>
+            </a>
           </Link>
         </li>
         <li>

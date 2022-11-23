@@ -11,14 +11,14 @@ function News(props) {
       </Head>
       <NoInputNavbar />
       <h1 className="title">Papurs News</h1>
-      {/* 
+
       <NewsComponent
-        title={"Papurs Update V 0.7"}
+        title={"Papurs Update V 1.2"}
         body={
           "Updated our pdf viewer. You can zoom in, zoom out, search and download pdfs now."
         }
-        date={"03/08/2022"}
-      /> */}
+        date={"23/11/2022"}
+      />
       <NewsComponent
         title={"Papurs Update V 1.1"}
         body={"Changed user interface."}

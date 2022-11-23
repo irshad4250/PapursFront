@@ -26,7 +26,7 @@ function ViewPdf(props) {
       exit={{ opacity: 0 }}
     >
       <div className={styles.warnMessage}>
-        Reload page if paper is not loaded.
+        Please wait while pdf is loading. Reload page if not loaded.
       </div>
     </motion.div>
   )
@@ -55,27 +55,16 @@ function ViewPdf(props) {
       <NoInputNavbar />
       <AnimatePresence>{warningBox}</AnimatePresence>
 
-      <a
-        className={styles.downloadButton}
-        href={props.pdfUrl}
-        target="_blank"
-        rel="noreferrer"
-        download
-      >
-        <div>
-          <Image width={30} height={30} src={DownloadIcon} />
-        </div>
-      </a>
-
+      {/* 
       <iframe
         src={`https://docs.google.com/viewerng/viewer?url=${props.pdfUrl}&embedded=true`}
         width="100%"
         className={styles.pdfContainer}
         scrolling="yes"
         frameBorder="0"
-      ></iframe>
+      ></iframe> */}
 
-      {/* <div className={styles.pdfContainer}>
+      <div className={styles.pdfContainer}>
         <Worker
           workerUrl="https://unpkg.com/pdfjs-dist@2.14.305/build/pdf.worker.min.js"
           style={{ width: "100%", height: "100%" }}
@@ -97,7 +86,7 @@ function ViewPdf(props) {
         max-height: 100% !important;
       }
       `}</style>
-      </div> */}
+      </div>
     </div>
   )
 }
@@ -106,14 +95,19 @@ export async function getServerSideProps(context) {
   const pdfName = context.query.name
   const type = context.query.type
 
-  let pdfLink =
-    process.env.NEXT_PUBLIC_BACKEND_URL + `getPdfUrl?pdfName=${pdfName}`
+  // let pdfLink =
+  //   process.env.NEXT_PUBLIC_BACKEND_URL + `getPdfUrl?pdfName=${pdfName}`
 
+  // if (type) {
+  //   pdfLink += `&type=${type}`
+  // }
+
+  // let pdfUrl = await getUrl(pdfLink)
+
+  let pdfUrl = process.env.NEXT_PUBLIC_BACKEND_URL + `getPdf?pdfName=${pdfName}`
   if (type) {
-    pdfLink += `&type=${type}`
+    pdfUrl += `&type=${type}`
   }
-
-  let pdfUrl = await getUrl(pdfLink)
 
   if (pdfUrl) {
     return {

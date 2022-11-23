@@ -17,12 +17,12 @@
 .filterBox {
   height: 300px;
   width: 250px;
-  background-color: var(--bodyColor);
+  background-color: rgb(240, 240, 240);
   border-radius: 20px;
   display: inline;
   box-sizing: border-box;
   padding: 5px;
-  box-shadow: 0px 0px 20px 1px;
+  box-shadow: 0px 0px 5px 1px;
 }
 
 .filterLabel {
