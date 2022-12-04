@@ -4,7 +4,7 @@ import NoInputNavbar from "../components/NoInputNavbar"
 import Head from "next/head"
 import { Worker, Viewer } from "@react-pdf-viewer/core"
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout"
-import { getFilePlugin } from "@react-pdf-viewer/get-file"
+
 import { postReq } from "../Global/functions"
 import Image from "next/image"
 import DownloadIcon from "../public/assets/icons/download.svg"
@@ -15,8 +15,7 @@ import "@react-pdf-viewer/default-layout/lib/styles/index.css"
 import axios from "axios"
 
 function ViewPdf(props) {
-  const getFilePluginInstance = getFilePlugin()
-  const defaultLayoutPluginInstance = defaultLayoutPlugin()
+  const defaultLayoutPluginInstance = defaultLayoutPlugin({})
 
   const [warningBox, setWarningBox] = useState(
     <motion.div
@@ -64,6 +63,22 @@ function ViewPdf(props) {
         frameBorder="0"
       ></iframe> */}
 
+      <a
+        href={props.pdfUrl}
+        target="_blank"
+        attributes-list
+        download
+        className={styles.downloadButton}
+      >
+        <Image
+          src={DownloadIcon}
+          priority={true}
+          quality={100}
+          height={30}
+          width={30}
+        />
+      </a>
+
       <div className={styles.pdfContainer}>
         <Worker
           workerUrl="https://unpkg.com/pdfjs-dist@2.14.305/build/pdf.worker.min.js"
@@ -71,12 +86,7 @@ function ViewPdf(props) {
           canvasCss={{ width: 700 }}
         >
           <Viewer
-            plugins={[
-              // defaultInstance,
-              getFilePluginInstance,
-              // searchPluginInstance,
-              defaultLayoutPluginInstance,
-            ]}
+            plugins={[defaultLayoutPluginInstance]}
             fileUrl={props.pdfUrl}
             defaultScale={0.9}
           />
