@@ -66,6 +66,7 @@ function ViewPdf(props) {
       <a
         href={props.pdfUrl}
         target="_blank"
+        rel="noreferrer"
         attributes-list
         download
         className={styles.downloadButton}
