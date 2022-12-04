@@ -38,7 +38,7 @@ function Help(props) {
         </div>
         <div className={styles.paragraph}>
           You can also filter your results to bring more relevant results. Lets
-          say your search is 'a particle', the results may bring you
+          say your search is a particle, the results may bring you
           physics,chemistry and even biology papers. But you can filter the
           search to only show chemistry papers and even the year you want.
         </div>
