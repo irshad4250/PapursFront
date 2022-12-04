@@ -237,7 +237,7 @@ export default function Home() {
           <div className={styles.homeHrefBox}>
             <Link href="/Help">
               <a className={styles.aboutHref}>
-                <div>How to use</div>
+                <div>View how to download papers.</div>
               </a>
             </Link>
           </div>
