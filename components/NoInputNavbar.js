@@ -108,6 +108,11 @@ function NoInputNavbar(props) {
           </Link>
         </li>
         <li>
+          <Link href="/Help">
+            <a>Help</a>
+          </Link>
+        </li>
+        <li>
           <Link href="/About">
             <a>About</a>
           </Link>

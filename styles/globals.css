@@ -3,6 +3,10 @@
   --colorAccentHover: #9158ec;
   --fontAccent: "Noto Sans", sans-serif;
   --titleFont: "Maven Pro", sans-serif;
+  --tailwindFont: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
   --bodyColor: rgb(229 231 235);
 }
 

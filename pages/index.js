@@ -234,6 +234,13 @@ export default function Home() {
               </a>
             </Link>
           </div>
+          <div className={styles.homeHrefBox}>
+            <Link href="/Help">
+              <a className={styles.aboutHref}>
+                <div>How to use</div>
+              </a>
+            </Link>
+          </div>
 
           <Block />
           <div className={styles.howToUseBox}>
@@ -244,31 +251,6 @@ export default function Home() {
             <div>
               Go try our pdf viewer. Zoom in, zoom our, search and download pdfs
               easily.
-            </div>
-            <h2>How to use</h2>
-            <div>1. Enter question. For example: what is a mole.</div>
-            <div>2. Press search.</div>
-            <div>
-              3. We will give you a list of papers which have the question.
-            </div>
-            <div>
-              Tip: To get more accurate results. Type questions which seem to be
-              unique from other papers.
-            </div>
-            <div>
-              For example, the diagram shows a cannon ball fired from a cannon,
-              will be more likely to bring the right paper than what is a mole.
-            </div>
-            <div>
-              Or if you want to surf papers. You can search what is a mole and
-              your search results will have a part of the paper based on you
-              search which you can read to find the paper you want.
-            </div>
-            <div>
-              You can also filter your results to bring more relevant results.
-              Lets say your search is a particle, the results may bring you
-              physics,chemistry and even biology papers. But you can filter the
-              search to only show chemistry papers and even the year you want.
             </div>
             <h2>New Update</h2>
             <div>Added download button when viewing papers.</div>
