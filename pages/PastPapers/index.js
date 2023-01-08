@@ -4,6 +4,7 @@ import NoInputNavbar from "../../components/NoInputNavbar"
 import { getSubjects, getYears } from "../../Global/functions"
 import Head from "next/head"
 import Plaque from "../../components/Ads/Plaque"
+import Footer from "../../components/Footer"
 
 function PastPapers(props) {
   const [subjects, setSubjects] = useState([])

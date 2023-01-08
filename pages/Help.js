@@ -48,7 +48,7 @@ function Help(props) {
         <h2 className={styles.subtitle}>How to download papers</h2>
         <div className={styles.paragraph}>
           You can download papers by clicking the purple download button which
-          is on the left side when viewing the pdf
+          is on the bottom side when viewing the pdf
         </div>
         <div className={styles.paragraph}>
           You can also download paper by clicking the grey download icon at the

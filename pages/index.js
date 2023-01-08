@@ -244,28 +244,15 @@ export default function Home() {
 
           <Block />
           <div className={styles.howToUseBox}>
+            <h2>New feature: Quick Switch</h2>
             <div>
-              Papurs.com is no longer in beta and is now officially released.
-            </div>
-            <h2>New Update: New pdf viewer and UI updates,</h2>
-            <div>
-              Go try our pdf viewer. Zoom in, zoom our, search and download pdfs
-              easily.
+              Introducing our new feature called Quick Switch, you can now
+              switch between mark scheme and question paper easily without
+              needing to open more than 1 page.
             </div>
             <h2>New Update</h2>
-            <div>Added download button when viewing papers.</div>
-            <div>
-              Search algorithm has been improved. Search results are now better.
-            </div>
-            <div>
-              Added autocomplete to search bar. You can now view text
-              predictions while you type. This make searching questions more
-              effective.
-            </div>
-            <div>
-              Past papers explorer: You can now explore past papers available on
-              our webistes. Click on papers explorer to try!
-            </div>
+            <div>Added the new Quick Switch feature</div>
+            <div>Added a loading indicator to the pdf viewer</div>
             <h2>Papers available</h2>
             <div>
               A Level: Computer Science (9608), General Paper (AS Level only)

@@ -2,8 +2,6 @@ import React from "react"
 import styles from "../styles/components/searchresult.module.css"
 import Image from "next/image"
 import PaperClipIcon from "../public/assets/icons/paperclip.svg"
-import PenIcon from "../public/assets/icons/pen.svg"
-import StickiesIcon from "../public/assets/icons/stickies.svg"
 import PaperIcon from "../public/assets/icons/paper.svg"
 
 function SearchResult(props) {
@@ -48,22 +46,7 @@ function SearchResult(props) {
             height={25}
             alt={props.title + " question paper"}
           />
-          <div>View Question paper</div>
-        </a>
-        <div className={styles.linkSeperator}></div>
-        <a
-          className={styles.linkRow + " " + styles.linkMark}
-          href={props.msLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src={PenIcon}
-            width={25}
-            height={25}
-            alt={props.title + " mark scheme"}
-          />
-          <div>View Mark Scheme</div>
+          <div>View Question Paper & Mark Scheme</div>
         </a>
       </div>
     </div>

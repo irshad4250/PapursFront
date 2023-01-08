@@ -11,7 +11,13 @@ function News(props) {
       </Head>
       <NoInputNavbar />
       <h1 className="title">Papurs News</h1>
-
+      <NewsComponent
+        title={"Papurs Update V 1.3"}
+        body={
+          "Updated our pdf viewer. Quick Switch: You can now quickly switch between mark scheme and question paper in only one page. Added a loading indicator."
+        }
+        date={"08/01/2023"}
+      />
       <NewsComponent
         title={"Papurs Update V 1.2"}
         body={

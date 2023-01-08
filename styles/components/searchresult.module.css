@@ -58,13 +58,6 @@
   color: black;
 }
 
-.linkSeperator {
-  height: 100%;
-  width: 1px;
-  height: 35px;
-  background-color: white;
-}
-
 .linkRow:hover,
 .linkRow:active {
   background-color: var(--colorAccentHover);

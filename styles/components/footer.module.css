@@ -1,0 +1,11 @@
+.footer {
+  background-color: white;
+  font-family: var(--tailwindFont);
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

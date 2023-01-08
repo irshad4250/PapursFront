@@ -105,6 +105,7 @@
   transition: 300ms ease-in-out;
   padding: 5px;
   border-radius: 5px;
+  margin: 0;
 }
 
 .rightSide li:hover {

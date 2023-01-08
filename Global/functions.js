@@ -41,8 +41,11 @@ export function getYears(subject) {
 /**
  * Function that posts request
  *
- * @param - route
- * @param - JSONData
+ * @param
+ * - route
+ * - JSONData
+ *
+ * returns JSON {error:true} if error occured
  */
 export function postReq(route, JSONData) {
   return new Promise((resolve, reject) => {
@@ -61,18 +64,16 @@ export function postReq(route, JSONData) {
  * Function that gets request
  *
  * @param - router
+ *
+ * returns JSON{error:true} if error occured
  */
-export function getReq(route) {
+export function getReq(route, reqParams = {}) {
   return new Promise((resolve, reject) => {
-    fetch(route, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        resolve(data)
+    axios
+      .get(route, reqParams)
+      .then((response) => {
+        resolve(response.data)
       })
+      .catch((err) => resolve({ error: true }))
   })
 }
