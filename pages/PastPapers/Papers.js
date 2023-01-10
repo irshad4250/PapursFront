@@ -3,6 +3,7 @@ import axios from "axios"
 import NoInputNavbar from "../../components/NoInputNavbar"
 import Head from "next/head"
 import styles from "../../styles/papersresult.module.css"
+import { makeId } from "../../Global/functions"
 
 function MonthBox({ month, variantObjectArray }) {
   return (
@@ -10,7 +11,7 @@ function MonthBox({ month, variantObjectArray }) {
       <div className={styles.monthLabel}>{month}</div>
       <div className={styles.papersLinkContainer}>
         {variantObjectArray.map((variantObject) => {
-          return <ListPdf variantObject={variantObject} />
+          return <ListPdf variantObject={variantObject} key={makeId(6)} />
         })}
       </div>
     </div>
