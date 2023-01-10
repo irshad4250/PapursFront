@@ -61,6 +61,8 @@ function ViewPdf(props) {
     props.type == "qp" ? false : true
   )
 
+  const [initialPages, setInitialPages] = useState({ qp: 0, ms: 0 })
+
   useEffect(() => {
     setTimeout(() => {
       setWarningBox()
@@ -226,6 +228,13 @@ function ViewPdf(props) {
               plugins={[defaultLayoutPluginInstance]}
               fileUrl={pdfLocalUrl[active] ? pdfLocalUrl[active] : "pdfbroken"}
               defaultScale={0.9}
+              onPageChange={(e) => {
+                setInitialPages((prev) => {
+                  prev[active] = e.currentPage
+                  return prev
+                })
+              }}
+              initialPage={initialPages[active]}
             />
           </Worker>
         )}
