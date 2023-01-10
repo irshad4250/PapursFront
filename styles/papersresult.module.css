@@ -1,0 +1,73 @@
+.monthBoxContainer {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 50px;
+  width: 500px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 1px #c1c1c1;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 8px 0px 8px 0px;
+  font-family: var(--fontAccent);
+  transition: 200ms;
+  z-index: 10;
+  cursor: pointer;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+/* .monthBoxContainer:hover {
+  background-color: #c1c1c1;
+} */
+
+.monthLabel {
+  font-size: 20px;
+  font-family: var(--tailwindFont);
+  font-weight: 600;
+  margin-left: 8px;
+  margin-bottom: 12px;
+}
+
+.papersLinkContainer {
+  display: flex;
+  flex-direction: column;
+  z-index: 15;
+}
+
+.papersLink {
+  font-family: var(--tailwindFont);
+  padding: 8px 15px 8px 10px;
+  border-top: solid 1px #c1c1c1;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  transition: 100ms ease-in-out;
+}
+
+.papersLinkArrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.QuickSwitchIndicator {
+  font-weight: 200;
+}
+
+.papersLink:hover {
+  background-color: whitesmoke;
+}
+
+@media screen and (max-width: 800px) {
+  .monthBoxContainer {
+    width: 100%;
+    border-radius: 0;
+  }
+}

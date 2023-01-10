@@ -216,9 +216,21 @@ export default function Home() {
             Search
           </div>
           <div className={styles.homeHrefBox}>
+            <Link href="/PastPapers">
+              <a className={styles.aboutHref}>
+                <div>A/O Level Past Papers</div>
+              </a>
+            </Link>
             <Link href="/About">
               <a className={styles.aboutHref}>
-                <div>What is papurs.com?</div>
+                <div>What is Papurs.com?</div>
+              </a>
+            </Link>
+          </div>
+          <div className={styles.homeHrefBox}>
+            <Link href="/Help">
+              <a className={styles.aboutHref}>
+                <div>How to download papers</div>
               </a>
             </Link>
             <Link href="https://www.instagram.com/pap.urs/">
@@ -231,13 +243,6 @@ export default function Home() {
                   width={35}
                   height={35}
                 />
-              </a>
-            </Link>
-          </div>
-          <div className={styles.homeHrefBox}>
-            <Link href="/Help">
-              <a className={styles.aboutHref}>
-                <div>View how to download papers.</div>
               </a>
             </Link>
           </div>
