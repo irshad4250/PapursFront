@@ -36,7 +36,9 @@ function PaperClipIcon() {
 }
 
 function ViewPdf(props) {
-  const defaultLayoutPluginInstance = defaultLayoutPlugin({})
+  const defaultLayoutPluginInstance = defaultLayoutPlugin({
+    sidebarTabs: (defaultTabs) => [],
+  })
 
   const [warningBox, setWarningBox] = useState(
     <motion.div
