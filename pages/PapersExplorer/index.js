@@ -34,7 +34,7 @@ function index(props) {
       <ul className={styles.explorerUl}>
         <ExplorerBar href={"/PapersExplorer/A"} label="A Level" />
         <ExplorerBar href={"/PapersExplorer/O"} label="O Level" />
-        <Plaque />
+        {/* <Plaque /> */}
       </ul>
     </div>
   )

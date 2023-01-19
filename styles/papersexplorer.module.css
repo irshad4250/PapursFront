@@ -8,7 +8,6 @@
   border: solid 1px rgb(157, 157, 157);
   border-radius: 15px;
   overflow: hidden;
-  padding-bottom: 10px;
 }
 
 @media screen and (max-width: 768px) {

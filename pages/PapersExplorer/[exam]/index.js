@@ -33,7 +33,7 @@ function index({ subjects, level }) {
               />
             )
           })}
-        <Plaque />
+        {/* <Plaque /> */}
       </ul>
     </div>
   )

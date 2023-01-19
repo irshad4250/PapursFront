@@ -63,6 +63,10 @@ function Papers(props) {
       const month = words[0]
       const variant = words[2].replace("P", "")
 
+      if (!rawData[month]) {
+        return
+      }
+
       rawData[month].push({
         variant,
         title: paper.title,
