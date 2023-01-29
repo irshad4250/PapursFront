@@ -249,11 +249,13 @@ export default function Home() {
 
           <Block />
           <div className={styles.howToUseBox}>
-            <h2>New feature: Quick Switch</h2>
+            <h2>New feature: Instant Answer</h2>
             <div>
-              Introducing our new feature called Quick Switch, you can now
-              switch between mark scheme and question paper easily without
-              needing to open more than 1 page.
+              Introducing our new feature called Instant answer, It brings the
+              question and the answer of your search on the search page. You
+              won't have to open the pdf. Still in testing mode Available in
+              paper 2 for physics, biology, economics, chemistry for both a
+              level and o level.
             </div>
             <h2>New Update</h2>
             <div>Added the new Quick Switch feature</div>

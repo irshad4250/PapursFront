@@ -37,6 +37,7 @@
   justify-content: space-evenly;
   border-radius: 10px;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 .linkRow {
@@ -105,6 +106,38 @@
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.instantAnsIndicator {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: var(--tailwindFont);
+  margin-top: 10px;
+}
+
+.instantAnsIcon {
+  overflow: hidden;
+}
+.instantAnsLabel {
+  font-weight: 200;
+}
+.instantAnsFoundIn {
+  margin-left: 10px;
+}
+.instantAnsQuestion {
+  font-family: var(--tailwindFont);
+  width: 100%;
+  padding: 5px;
+}
+
+.instantAnsWarning {
+  color: #787878;
+  width: 100%;
+  font-size: 10px;
+  padding: 5px;
+  font-style: italic;
 }
 
 @media screen and (max-width: 800px) {

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Head from "next/head"
 import Navbar from "../components/Navbar"
 import SearchResult from "../components/SearchResult"
@@ -7,6 +7,9 @@ import axios from "axios"
 import Plaque from "../components/Ads/Plaque"
 
 function Search(props) {
+  useEffect(() => {
+    console.log(props)
+  }, [])
   return (
     <div>
       <Head>
@@ -37,6 +40,7 @@ function Search(props) {
               qpLink={result.qpLink}
               msLink={result.msLink}
               resultText={result.resultText}
+              instantAns={result.instantAns}
               key={makeId(5)}
             />
           )
