@@ -252,10 +252,10 @@ export default function Home() {
             <h2>New feature: Instant Answer</h2>
             <div>
               Introducing our new feature called Instant answer, It brings the
-              question and the answer of your search on the search page. You
-              won't have to open the pdf. Still in testing mode Available in
-              paper 2 for physics, biology, economics, chemistry for both a
-              level and o level.
+              question and the answer of your search on the search page. You do
+              not need to open the pdf. Still in testing mode Available in paper
+              2 for physics, biology, economics, chemistry for both a level and
+              o level.
             </div>
             <h2>New Update</h2>
             <div>Added the new Quick Switch feature</div>
