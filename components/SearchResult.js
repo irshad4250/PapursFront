@@ -79,7 +79,7 @@ function SearchResult(props) {
           </div>
 
           <div className={styles.instantAnsQuestion}>
-            <b>Answer</b> : {props.instantAns.answer}
+            <b>Answer</b>: {props.instantAns.answer}
           </div>
 
           <div className={styles.instantAnsWarning}>
