@@ -33,7 +33,7 @@
 .searchBoxAndFilterContainer {
   width: 550px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
   transition: 100ms ease-in-out;
   display: flex;
@@ -67,11 +67,15 @@
   padding-right: 10px;
   background-color: white;
   cursor: pointer;
-  transition: 100ms ease-in;
+  transition: 200ms ease-in-out;
   color: var(--colorAccent);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.funnelIcon:hover {
+  opacity: 0.4;
 }
 
 .title {

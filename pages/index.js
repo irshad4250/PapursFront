@@ -10,49 +10,26 @@ import Block from "../components/Ads/Block"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import InstaIcon from "../public/assets/icons/instagram.png"
+import { useRouter } from "next/router"
 
 let searchValue = ""
 let previousVal = ""
 
 export default function Home() {
-  const [showFilter, setShowFilter] = useState(false)
-  const [filterObj, setFilterObj] = useState({
-    year: "Any",
-    subject: "Any",
-    level: "Any",
-  })
-
+  const router = useRouter()
   const [inputFocused, setInputFocused] = useState(false)
   const [autocompleteList, setAutocompleteList] = useState([])
 
   const [fetching, setFetching] = useState(false)
-
-  function handleUpdate(subject, year, level) {
-    setFilterObj({ year: year, subject: subject, level: level })
-    setShowFilter(false)
-  }
 
   function go(value) {
     if (!searchValue) {
       return
     }
 
-    const yearGot = filterObj.year
-    const subjectGot = filterObj.subject
-    const levelGot = filterObj.level
-
     let url = `/Search?q=${encodeURIComponent(value ? value : searchValue)}`
-
-    if (levelGot && levelGot != "Any") {
-      url += `&exam=${levelGot}`
-    }
-    if (subjectGot && subjectGot != "Any") {
-      url += `&subject=${subjectGot}`
-    }
-    if (yearGot && yearGot != "Any") {
-      url += `&year=${yearGot}`
-    }
-    window.location.href = url
+    // window.location.href = url
+    router.push(url)
   }
 
   async function handleTextChange(value, ignoreFetch) {
@@ -89,13 +66,7 @@ export default function Home() {
   return (
     <div>
       <NoInputNavbar />
-      <FilterBox
-        handleUpdate={handleUpdate}
-        onClose={() => {
-          setShowFilter(false)
-        }}
-        show={showFilter}
-      />
+
       <Head>
         <meta charset="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -159,18 +130,6 @@ export default function Home() {
               )}
             </AnimatePresence>
 
-            <div className={styles.filterIconContainer}>
-              <Image
-                src={funnelIcon}
-                width={25}
-                height={100}
-                alt="filter button"
-                className={styles.funnelIcon}
-                onClick={() => {
-                  setShowFilter(true)
-                }}
-              />
-            </div>
           </div>
 
           <AnimatePresence>

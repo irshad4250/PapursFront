@@ -1,29 +1,21 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styles from "../styles/components/navbar.module.css"
 import Image from "next/image"
 import Link from "next/link"
-import FunnelIcon from "../public/assets/icons/funnel.svg"
 import SearchIcon from "../public/assets/icons/search.svg"
 import { postReq, makeId } from "../Global/functions"
-import FilterBox from "../components/FilterBox"
 import { motion, AnimatePresence } from "framer-motion"
-import ListIcon from "../public/assets/icons/list.png"
+import { useRouter } from "next/router"
 
 let searchValue = ""
 let previousVal = ""
 
 function Navbar(props) {
   const [navbarTop, setNavbarTop] = useState("100%")
-  const [showFilter, setShowFilter] = useState(false)
-  const [filterObj, setFilterObj] = useState({
-    year: "Any",
-    subject: "Any",
-    level: "Any",
-  })
-
   const [inputFocused, setInputFocused] = useState(false)
   const [autocompleteList, setAutocompleteList] = useState([])
   const [fetching, setFetching] = useState(false)
+  const router = useRouter()
 
   function menuClicked() {
     if (navbarTop == 0) {
@@ -38,27 +30,9 @@ function Navbar(props) {
       return
     }
 
-    const yearGot = filterObj.year
-    const subjectGot = filterObj.subject
-    const levelGot = filterObj.level
-
     let url = `/Search?q=${encodeURIComponent(value ? value : searchValue)}`
 
-    if (levelGot && levelGot != "Any") {
-      url += `&exam=${levelGot}`
-    }
-    if (subjectGot && subjectGot != "Any") {
-      url += `&subject=${subjectGot}`
-    }
-    if (yearGot && yearGot != "Any") {
-      url += `&year=${yearGot}`
-    }
-    window.location.href = url
-  }
-
-  function handleUpdate(subject, year, level) {
-    setFilterObj({ year: year, subject: subject, level: level })
-    setShowFilter(false)
+    router.push(url)
   }
 
   async function handleTextChange(value, ignoreFetch) {
@@ -94,13 +68,6 @@ function Navbar(props) {
 
   return (
     <>
-      <FilterBox
-        handleUpdate={handleUpdate}
-        onClose={() => {
-          setShowFilter(false)
-        }}
-        show={showFilter}
-      />
       <nav className={styles.navbar}>
         <div className={styles.leftSide}>
           <Link href="/">
@@ -151,16 +118,6 @@ function Navbar(props) {
                 </motion.div>
               )}
             </AnimatePresence>
-
-            <Image
-              src={FunnelIcon}
-              width={30}
-              className={styles.funnelIcon}
-              alt="filter"
-              onClick={() => {
-                setShowFilter(true)
-              }}
-            />
 
             <Image
               src={SearchIcon}
