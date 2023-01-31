@@ -1,25 +1,20 @@
 import React, { useState, useEffect } from "react"
 import Head from "next/head"
 import styles from "../styles/home.module.css"
-import funnelIcon from "../public/assets/icons/funnel.svg"
 import Image from "next/image"
 import NoInputNavbar from "../components/NoInputNavbar"
-import FilterBox from "../components/FilterBox"
 import { postReq, makeId } from "../Global/functions"
 import Block from "../components/Ads/Block"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import InstaIcon from "../public/assets/icons/instagram.png"
-import { useRouter } from "next/router"
 
 let searchValue = ""
 let previousVal = ""
 
 export default function Home() {
-  const router = useRouter()
   const [inputFocused, setInputFocused] = useState(false)
   const [autocompleteList, setAutocompleteList] = useState([])
-
   const [fetching, setFetching] = useState(false)
 
   function go(value) {
@@ -28,8 +23,7 @@ export default function Home() {
     }
 
     let url = `/Search?q=${encodeURIComponent(value ? value : searchValue)}`
-    // window.location.href = url
-    router.push(url)
+    window.location.href = url
   }
 
   async function handleTextChange(value, ignoreFetch) {
@@ -129,7 +123,6 @@ export default function Home() {
                 </motion.div>
               )}
             </AnimatePresence>
-
           </div>
 
           <AnimatePresence>

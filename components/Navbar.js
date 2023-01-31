@@ -5,7 +5,6 @@ import Link from "next/link"
 import SearchIcon from "../public/assets/icons/search.svg"
 import { postReq, makeId } from "../Global/functions"
 import { motion, AnimatePresence } from "framer-motion"
-import { useRouter } from "next/router"
 
 let searchValue = ""
 let previousVal = ""
@@ -15,7 +14,6 @@ function Navbar(props) {
   const [inputFocused, setInputFocused] = useState(false)
   const [autocompleteList, setAutocompleteList] = useState([])
   const [fetching, setFetching] = useState(false)
-  const router = useRouter()
 
   function menuClicked() {
     if (navbarTop == 0) {
@@ -31,8 +29,7 @@ function Navbar(props) {
     }
 
     let url = `/Search?q=${encodeURIComponent(value ? value : searchValue)}`
-
-    router.push(url)
+    window.location.href = url
   }
 
   async function handleTextChange(value, ignoreFetch) {
