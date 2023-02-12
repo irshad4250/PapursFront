@@ -27,6 +27,17 @@ function SearchResult(props) {
   //   )
   // }
 
+  function removeUselessLines(text) {
+    let finalText = text.replace(/^\s*\n/gm, "")
+    finalText = finalText.replace(
+      /© UCLES 20\d\d \d\d\d\d\/\d\d\/\w\/\w\/\d\d/gm,
+      ""
+    )
+    finalText = finalText.replace(/[[]Turn over/gm, "")
+    finalText = finalText.replace(/© UCLES 20\d\d Page \d\d of \d\d/gm, "")
+    return finalText
+  }
+
   return (
     <div className={styles.resultBox}>
       <div className={styles.resultTitle}>
@@ -75,11 +86,11 @@ function SearchResult(props) {
             </div>
           </div>
           <div className={styles.instantAnsQuestion}>
-            <b>Question</b>: {props.instantAns.question}
+            <b>Question</b>: {removeUselessLines(props.instantAns.question)}
           </div>
 
           <div className={styles.instantAnsQuestion}>
-            <b>Answer</b>: {props.instantAns.answer}
+            <b>Answer</b>: {removeUselessLines(props.instantAns.answer)}
           </div>
 
           <div className={styles.instantAnsWarning}>

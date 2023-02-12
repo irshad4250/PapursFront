@@ -128,6 +128,7 @@
 }
 .instantAnsQuestion {
   font-family: var(--tailwindFont);
+  white-space: pre-line;
   width: 100%;
   padding: 5px;
 }
