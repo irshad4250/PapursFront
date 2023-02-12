@@ -28,7 +28,10 @@ function SearchResult(props) {
   // }
 
   function removeUselessLines(text) {
-    let finalText = text.replace(/^\s*\n/gm, "")
+    let finalText = text
+      .split(/\r?\n/)
+      .filter((l) => l)
+      .join("\n")
     finalText = finalText.replace(
       /© UCLES 20\d\d \d\d\d\d\/\d\d\/\w\/\w\/\d\d/gm,
       ""

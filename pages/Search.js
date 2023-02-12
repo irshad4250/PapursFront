@@ -7,9 +7,6 @@ import axios from "axios"
 import Plaque from "../components/Ads/Plaque"
 
 function Search(props) {
-  useEffect(() => {
-    console.log(props)
-  }, [])
   return (
     <div>
       <Head>
