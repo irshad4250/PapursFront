@@ -21,7 +21,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: 500;
+
   gap: 5px;
   font-size: 25px;
 }
@@ -90,6 +91,7 @@
   box-sizing: border-box;
   padding: 5px;
   text-align: left;
+  font-family: var(--tailwindFont);
 }
 
 .noResultText {

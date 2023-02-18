@@ -39,6 +39,7 @@ function Search(props) {
               resultText={result.resultText}
               instantAns={result.instantAns}
               key={makeId(5)}
+              q={props.q}
             />
           )
         })}

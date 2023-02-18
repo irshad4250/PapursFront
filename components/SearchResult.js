@@ -41,6 +41,25 @@ function SearchResult(props) {
     return finalText
   }
 
+  function AddBoldToResultText(q, resultText) {
+    const resultTextWords = resultText.split(" ")
+    const qWords = q.split(" ")
+
+    const FinalComponent = []
+
+    resultTextWords.forEach((word) => {
+      if (qWords.includes(word)) {
+        FinalComponent.push(<b>{word}</b>)
+      } else {
+        FinalComponent.push(word)
+      }
+
+      FinalComponent.push(" ")
+    })
+
+    return FinalComponent
+  }
+
   return (
     <div className={styles.resultBox}>
       <div className={styles.resultTitle}>
@@ -59,7 +78,9 @@ function SearchResult(props) {
         <div className={styles.resultSubject}>{props.subject}</div>
       )}
       {props.resultText && (
-        <div className={styles.resultText}>{props.resultText}</div>
+        <div className={styles.resultText}>
+          {AddBoldToResultText(props.q, props.resultText)}
+        </div>
       )}
       <div className={styles.resultRedirects}>
         <a

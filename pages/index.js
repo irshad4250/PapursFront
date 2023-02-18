@@ -199,19 +199,18 @@ export default function Home() {
             </Link>
           </div>
 
-          <Block />
+          {/* <Block /> */}
           <div className={styles.howToUseBox}>
             <h2>New feature: Instant Answer</h2>
             <div>
               Introducing our new feature called Instant answer, It brings the
               question and the answer of your search on the search page. You do
-              not need to open the pdf. Still in testing mode Available in paper
-              2 for physics, biology, economics, chemistry for both a level and
-              o level.
+              not need to open the pdf. Still in testing mode. Not available in
+              all papers.
             </div>
             <h2>New Update</h2>
+            <div>Added the Instant answer</div>
             <div>Added the new Quick Switch feature</div>
-            <div>Added a loading indicator to the pdf viewer</div>
             <h2>Papers available</h2>
             <div>
               A Level: Computer Science (9608), General Paper (AS Level only)
