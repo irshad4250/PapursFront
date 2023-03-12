@@ -186,7 +186,7 @@ function SearchResult(props) {
             </div>
             <div className={styles.instantAnsLabel}>InstantAnswer</div>
             <div className={styles.instantAnsFoundIn}>
-              Found in: <b>{currentInstantAnswer.label}</b>
+              Qu: <b>{currentInstantAnswer.label}</b>
             </div>
             <div
               className={styles.instantAnsChangeButton}
