@@ -77,3 +77,26 @@ export function getReq(route, reqParams = {}) {
       .catch((err) => resolve({ error: true }))
   })
 }
+
+/**
+ * Function that returns all instant answers of a past paper
+ *
+ * @param - pdfName
+ *
+ * Returns empty array if error occured or no instant answers available
+ */
+export function getAllInstantAnswers(pdfName) {
+  return new Promise((resolve, reject) => {
+    postReq(
+      process.env.NEXT_PUBLIC_BACKEND_URL + "search/getAllInstantAnswers",
+      { pdfName: pdfName }
+    ).then((response) => {
+      if (response.error) {
+        alert("Could not retrieve all instant answers")
+        resolve([])
+        return
+      }
+      resolve(response)
+    })
+  })
+}

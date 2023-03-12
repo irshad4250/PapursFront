@@ -115,6 +115,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   font-family: var(--tailwindFont);
   margin-top: 10px;
 }
@@ -133,6 +134,19 @@
   white-space: pre-line;
   width: 100%;
   padding: 5px;
+  overflow: hidden;
+}
+
+.instantAnsChangeButton {
+  transform: scale(0.75);
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: 150ms;
+}
+
+.instantAnsChangeButton:hover {
+  opacity: 0.4;
 }
 
 .instantAnsWarning {
