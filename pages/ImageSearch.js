@@ -103,7 +103,7 @@ function ImageSearch(props) {
       <div className="main">
         <div className={styles.inputBox}>{image}</div>
         <label htmlFor={"upload-photo"} className={styles.fileInputLabel}>
-          <div className={styles.chooseImageTab}>Choose Image</div>
+          <div className={styles.chooseImageTab}>Press</div>
           <div className={styles.imageNameTab}>{imageTitle}</div>
         </label>
         <input
