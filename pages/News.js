@@ -12,6 +12,11 @@ function News(props) {
       <NoInputNavbar />
       <h1 className="title">Papurs News</h1>
       <NewsComponent
+        title={"Papurs update V 1.5.5"}
+        body={"Added image search"}
+        date={"09/05/2023"}
+      />
+      <NewsComponent
         title={"Papurs update V 1.5"}
         body={
           "Introducing Instant Answer. Search results will now bring the question number, question and answer of your search. Still in testing mode Available in paper 2 for physics, biology, economics, chemistry for both a level and o level."

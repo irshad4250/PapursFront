@@ -12,6 +12,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: var(--tailwindFont);
 }
 
 h1 {

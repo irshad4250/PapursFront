@@ -173,9 +173,9 @@ export default function Home() {
                 <div>A/O Level Past Papers</div>
               </a>
             </Link>
-            <Link href="/About">
+            <Link href="/ImageSearch">
               <a className={styles.aboutHref}>
-                <div>What is Papurs.com?</div>
+                <div>New: Search with picture</div>
               </a>
             </Link>
           </div>
@@ -199,19 +199,12 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* <Block /> */}
           <div className={styles.howToUseBox}>
-            <h2>New feature: Instant Answer</h2>
+            <h2>New feature: Image Search</h2>
             <div>
-              Introducing our new feature called Instant answer, It brings the
-              question and the answer of your search on the search page. You do
-              not need to open the pdf. Still in testing mode. Not available in
-              all papers.
+              You can now search with a picture instead of typing, make sure the
+              picture is cropped for faster search. Still in testing mode.
             </div>
-            <h2>New Update</h2>
-            <div>Added the Instant answer</div>
-            <div>Added the new Quick Switch feature</div>
-            <h2>Papers available</h2>
             <div>
               A Level: Computer Science (9608), General Paper (AS Level only)
               (8004), Design and Technology (9705), Mathematics (9709), Physics

@@ -187,8 +187,8 @@ function Navbar(props) {
               </Link>
             </li>
             <li>
-              <Link href="/PapersExplorer">
-                <a>Papers explorer</a>
+              <Link href="/ImageSearch">
+                <a className={styles.tabLink}>Image Search</a>
               </Link>
             </li>
             <li>

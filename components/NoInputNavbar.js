@@ -91,20 +91,8 @@ function NoInputNavbar(props) {
           </Link>
         </li>
         <li>
-          <Link href="/PapersExplorer">
-            <a className={styles.tabLink}>
-              <div className={styles.tabIcons}>
-                <Image
-                  priority={true}
-                  quality={100}
-                  src={ExplorerIcon}
-                  alt={"Past Papers Explorer"}
-                  width={35}
-                  height={35}
-                />
-              </div>
-              <div>Papers explorer</div>
-            </a>
+          <Link href="/ImageSearch">
+            <a className={styles.tabLink}>Image Search</a>
           </Link>
         </li>
         <li>

@@ -1,0 +1,158 @@
+.inputBox {
+  border: solid 1px #94a3b8;
+  width: 500px;
+  height: 250px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: white;
+  border-style: dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
+  height: 100%;
+  /* width: 100%; */
+}
+
+.fileInput {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.fileInputLabel {
+  width: 500px;
+  height: 35px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  border: solid 1px #d1d5db;
+  font-size: 15px;
+}
+
+.chooseImageTab {
+  width: 120px;
+  height: 100%;
+  background-color: var(--colorAccent);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-weight: 500;
+}
+
+.imageNameTab {
+  width: 380px;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.imageTextAreaContainer {
+  width: 500px;
+  height: 100px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.imageTextArea {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  resize: none;
+  border-radius: 15px;
+  padding: 5px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.buttonContainer {
+  width: 500px;
+  height: fit-content;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.searchButton {
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  width: 70px;
+  height: 30px;
+  cursor: pointer;
+  background-color: var(--colorAccent);
+  color: white;
+  font-size: 16px;
+  transition: 200ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.searchIndicator {
+  animation-name: inAndOut;
+  animation-duration: 700ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+.showingResults {
+  margin: auto;
+  height: fit-content;
+  margin-top: 20px;
+  width: 500px;
+}
+.resultsBox {
+  width: 500px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+@keyframes inAndOut {
+  0% {
+    opacity: 1;
+    /* font-weight: bold; */
+  }
+  100% {
+    opacity: 0.1;
+    /* font-weight: normal; */
+  }
+}
+
+.searchButton:hover {
+  background-color: var(--colorAccentHover);
+}
+
+@media screen and (max-width: 600px) {
+  .inputBox {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  /* .showingResults,. */
+  .fileInputLabel,
+  .imageTextAreaContainer,
+  .buttonContainer,
+  .showingResults,
+  .resultsBox {
+    width: calc(100% - 15px);
+  }
+}
