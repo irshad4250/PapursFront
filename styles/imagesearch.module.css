@@ -241,4 +241,8 @@
   .showingResults {
     width: calc(100% - 15px);
   }
+
+  .resultsBox {
+    width: 100%;
+  }
 }
