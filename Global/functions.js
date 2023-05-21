@@ -100,3 +100,129 @@ export function getAllInstantAnswers(pdfName) {
     })
   })
 }
+
+/**
+ * Function that compresses an image
+ *
+ * @param - file from input
+ *
+ * Returns a blob
+ */
+export function resizeImage(file) {
+  return new Promise((resolve1, reject1) => {
+    let canvas, ctx
+    let originalSize = file.size
+
+    canvas = document.createElement("canvas")
+    ctx = canvas.getContext("2d")
+    let imgObj = new Image()
+    let fileUrl = URL.createObjectURL(file)
+    imgObj.src = fileUrl
+
+    imgObj.onload = async () => {
+      let naturalHeight = imgObj.naturalHeight
+      let naturalWidth = imgObj.naturalWidth
+
+      let aspectRatio = naturalWidth / naturalHeight
+
+      let height = 500
+      let width = aspectRatio * height
+      canvas.height = height
+      canvas.width = width
+
+      ctx.drawImage(imgObj, 0, 0, width, height)
+
+      let blob = await convertCanvasToBlob(canvas)
+      if (blob.size < originalSize) {
+        resolve1(blob)
+      } else {
+        resolve1(file)
+      }
+    }
+  })
+}
+
+export function resizeImageV2(imgUrl, config) {
+  console.log(config)
+  return new Promise((resolve, reject) => {
+    let canvas = document.createElement("canvas")
+    let ctx = canvas.getContext("2d")
+    let imgObj = new Image()
+    let fileUrl = imgUrl
+
+    imgObj.src = fileUrl
+    imgObj.style.objectFit = "contain"
+    imgObj.style.objectPosition = "center"
+
+    imgObj.onload = async () => {
+      canvas.height = 1000
+      canvas.width = 1000
+
+      imgObj.style.clipPath = `inset(${config.y}px ${
+        config.originalWidth - (config.x + config.width)
+      }px
+        ${config.originalHeight - (config.y + config.height)}px ${config.x}px)`
+
+      // console.log(imgObj.height)
+      // console.log(config.height)
+      // console.log(config.y + config.height)
+
+      // ctx.fillStyle("#FFFFFF")
+      ctx.drawImage(imgObj, 0, 0)
+
+      console.log(canvas)
+      let blob = await convertCanvasToBlob(canvas, 1)
+      resolve(blob)
+    }
+  })
+}
+
+function convertCanvasToBlob(can, compressingFactor = 0.8) {
+  return new Promise((resolve, reject) => {
+    can.toBlob(
+      function (blob) {
+        resolve(blob)
+      },
+      "image/jpeg",
+      compressingFactor
+    )
+  })
+}
+
+export const cropImageNow = (realImageUrl, image, crop, rotate) => {
+  return new Promise((resolve, reject) => {
+    const canvas = document.createElement("canvas")
+    const scaleX = image.naturalWidth / image.width
+    const scaleY = image.naturalHeight / image.height
+
+    const ctx = canvas.getContext("2d")
+
+    const pixelRatio = window.devicePixelRatio
+    canvas.width = crop.width * pixelRatio * scaleX
+    canvas.height = crop.height * pixelRatio * scaleY
+
+    ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0)
+    ctx.scale(pixelRatio, pixelRatio)
+    ctx.imageSmoothingQuality = "high"
+
+    const imageReal = document.createElement("img")
+    imageReal.src = realImageUrl
+
+    imageReal.onload = () => {
+      ctx.drawImage(
+        image,
+        crop.x * scaleX,
+        crop.y * scaleY,
+        crop.width * scaleX,
+        crop.height * scaleY,
+        0,
+        0,
+        crop.width * scaleX,
+        crop.height * scaleY
+      )
+
+      const base64Image = canvas.toDataURL("image/jpeg")
+      resolve(base64Image)
+    }
+  })
+}

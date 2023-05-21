@@ -19,6 +19,8 @@ import Switch from "react-switch"
 import PaperClipSvg from "../public/assets/icons/bx-paperclip.svg"
 import PenSvg from "../public/assets/icons/bxs-pen.svg"
 
+import axios from "axios"
+
 function PenIcon() {
   return (
     <div className={styles.iconBox}>
@@ -54,6 +56,7 @@ function ViewPdf(props) {
   )
 
   const [pdfLocalUrl, setPdfLocalUrl] = useState({ qp: null, ms: null })
+  const [pdfDataUrl, setPdfDataUrl] = useState({ qp: null, ms: null })
 
   const [pdfDownloaded, setPdfDownloaded] = useState(false)
   const [progress, setProgress] = useState(0)
@@ -128,6 +131,37 @@ function ViewPdf(props) {
 
   const switchChanged = (e) => setSwitchChecked(e)
 
+  const downloadClicked = async () => {
+    let tempLink = document.createElement("a")
+    let fileName =
+      active == "ms" ? props.pdfName.replace("qp", "ms") : props.pdfName
+    tempLink.download = fileName
+
+    let ref =
+      "data:application/pdf;base64," +
+      (await getDataUrlFromLocal(
+        active == "ms" ? props.pdfMsUrl : props.pdfQpUrl
+      ))
+
+    tempLink.href = ref
+    tempLink.click()
+  }
+
+  const getDataUrlFromLocal = (url) => {
+    return new Promise((resolve, reject) => {
+      axios
+        .get(url, { responseType: "arraybuffer" })
+        .then((response) => {
+          const base64 = Buffer.from(response.data, "base64").toString("base64")
+          resolve(base64)
+        })
+        .catch(() => {
+          alert("Could not download pdf")
+          resolve()
+        })
+    })
+  }
+
   return (
     <div className="main">
       <style jsx global>{`
@@ -185,11 +219,12 @@ function ViewPdf(props) {
           transition={{ type: "spring", stiffness: 200, damping: 17 }}
         >
           <a
-            href={active == "qp" ? pdfLocalUrl.qp : pdfLocalUrl.ms}
-            target="_blank"
-            rel="noreferrer"
+            // href={active == "qp" ? pdfLocalUrl.qp : pdfLocalUrl.ms}
+            // target="_blank"
+            // rel="noreferrer"
             attributes-list
-            download
+            // download
+            onClick={downloadClicked}
             className={styles.downloadButton}
           >
             <Image

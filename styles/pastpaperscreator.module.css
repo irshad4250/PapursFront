@@ -1,0 +1,46 @@
+.parentContainer {
+  margin: auto;
+  width: 500px;
+  height: fit-content;
+}
+
+.inputBar {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  overflow: hidden;
+  border: solid 1px rgb(204, 204, 204);
+}
+
+.inputStyle {
+  width: calc(100% - 70px);
+  height: 30px;
+  margin: auto;
+  border: none;
+  transition: 200ms;
+  padding: 5px;
+  outline: none;
+  padding-left: 4px;
+}
+
+.label {
+  min-width: 70px;
+  width: fit-content;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--colorAccent);
+  color: white;
+}
+
+.yearLabel {
+  min-width: 80px;
+}
+

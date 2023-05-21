@@ -5,13 +5,17 @@ import styles from "../styles/imagesearch.module.css"
 import Tesseract from "tesseract.js"
 import axios from "axios"
 import SearchResult from "../components/SearchResult"
-import { makeId } from "../Global/functions"
+import { makeId, cropImageNow } from "../Global/functions"
+
+import ReactCrop, { Crop } from "react-image-crop"
+import "react-image-crop/dist/ReactCrop.css"
 
 function ImageSearch(props) {
   const [image, setImage] = useState(<div>No Image Chosen</div>)
   const [imageTitle, setImageTitle] = useState("No image selected")
 
   const [textScanned, setTextScanned] = useState("")
+  const [cropper, setCropper] = useState()
 
   const [searching, setSearching] = useState(false)
   const [recognizingText, setRecognizingText] = useState(false)
@@ -23,24 +27,47 @@ function ImageSearch(props) {
 
   const textAreaRef = useRef()
 
-  const handleFileChange = (e) => {
+  const handleFileChange = async (e) => {
     setTextAreaDisabled(true)
     if (e.target.files.length == 0) {
       return
     }
 
-    const url = URL.createObjectURL(e.target.files[0])
     setImageTitle(e.target.files[0].name)
-    setImage(<img src={url} className={styles.image} />)
+    setCropper(
+      <Cropper
+        imageUrl={URL.createObjectURL(e.target.files[0])}
+        confirmClicked={(config) => {
+          cropperConfirmClicked(URL.createObjectURL(e.target.files[0]), config)
+        }}
+      />
+    )
 
-    setRecognizingText(true)
-    // Tesseract.recognize(url, "eng", { logger: (m) => console.log(m) }).then(
-    Tesseract.recognize(url, "eng").then(({ data: { text } }) => {
-      setTextScanned(removeUselessLetters(text))
-      textAreaRef.current.value = removeUselessLetters(text)
-      setRecognizingText(false)
-      search(removeUselessLetters(text))
-    })
+    async function cropperConfirmClicked(imgUrl, config) {
+      setCropper()
+
+      let url = await cropImageNow(
+        URL.createObjectURL(e.target.files[0]),
+        config.image,
+        config.crop,
+        config.rotate
+      )
+      setImage(<img src={url} className={styles.image} />)
+
+      setRecognizingText(true)
+      // Tesseract.recognize(url, "eng", { logger: (m) => console.log(m) }).then(
+      Tesseract.recognize(url, "eng")
+        .then(({ data: { text } }) => {
+          const textFiltered = removeUselessLetters(text)
+          setTextScanned(textFiltered)
+          textAreaRef.current.value = textFiltered
+          setRecognizingText(false)
+          search(textFiltered)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
   }
 
   const removeUselessLetters = (text) => {
@@ -84,6 +111,8 @@ function ImageSearch(props) {
 
   return (
     <div>
+      {cropper}
+      {/* <Cropper /> */}
       <NoInputNavbar />
       <Head>
         <meta charset="UTF-8" />
@@ -165,6 +194,73 @@ function ImageSearch(props) {
             )
           })}
           {results.length === 0 && <div>No results found</div>}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Cropper(props) {
+  const [crop, setCrop] = useState({
+    unit: "px",
+    x: 10,
+    y: 10,
+    width: 300,
+    height: 200,
+    originalHeight: 0,
+    originalWidth: 0,
+  })
+
+  const [rotate, setRotate] = useState(0)
+  const imageRef = useRef()
+
+  const rangeChanged = (e) => {
+    setRotate(e.target.value)
+  }
+
+  const confirmClicked = () => {
+    setCrop((pr) => {
+      pr.originalHeight = imageRef.current.height
+      pr.originalWidth = imageRef.current.width
+    })
+    props.confirmClicked({
+      rotate: rotate,
+      image: imageRef.current,
+      crop: crop,
+    })
+  }
+
+  return (
+    <div className={styles.cropperWindow}>
+      <div className={styles.cropperBody}>
+        <div className={styles.cropperTitle}>Crop Image</div>
+        <ReactCrop
+          crop={crop}
+          onChange={(c) => setCrop(c)}
+          style={{ backgroundColor: "white" }}
+        >
+          <img
+            src={props.imageUrl}
+            className={styles.cropperImage}
+            style={{ transform: `rotate(${rotate}deg)` }}
+            ref={imageRef}
+          />
+        </ReactCrop>
+        <div className={styles.cropperButtons}>
+          {/* <input
+            className={styles.rotateBar}
+            type="range"
+            min={-180}
+            max={180}
+            defaultValue={0}
+            onChange={rangeChanged}
+          /> */}
+          <div
+            className={"papursButton " + styles.button}
+            onClick={confirmClicked}
+          >
+            Confirm
+          </div>
         </div>
       </div>
     </div>
