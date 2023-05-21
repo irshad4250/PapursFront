@@ -238,6 +238,7 @@ function Cropper(props) {
           crop={crop}
           onChange={(c) => setCrop(c)}
           style={{ backgroundColor: "white" }}
+          className={styles.cropperImage}
         >
           <img
             src={props.imageUrl}
