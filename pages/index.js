@@ -175,14 +175,14 @@ export default function Home() {
             </Link>
             <Link href="/ImageSearch">
               <a className={styles.aboutHref}>
-                <div>New: Search with picture</div>
+                <div>Search with picture</div>
               </a>
             </Link>
           </div>
           <div className={styles.homeHrefBox}>
-            <Link href="/Help">
+            <Link href="/PastPapersCreator">
               <a className={styles.aboutHref}>
-                <div>How to download papers</div>
+                <div>New: Past Papers Creator</div>
               </a>
             </Link>
             <Link href="https://www.instagram.com/pap.urs/">
@@ -200,10 +200,10 @@ export default function Home() {
           </div>
 
           <div className={styles.howToUseBox}>
-            <h2>New feature: Image Search</h2>
+            <h2>New feature: Past Papers Creator</h2>
             <div>
-              You can now search with a picture instead of typing, make sure the
-              picture is cropped for faster search. Still in testing mode.
+              You can now generate a book of past papers using our new past
+              paper Creator tool.
             </div>
             <div>
               A Level: Computer Science (9608), General Paper (AS Level only)

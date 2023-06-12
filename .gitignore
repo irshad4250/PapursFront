@@ -32,4 +32,3 @@ yarn-error.log*
 .vercel
 
 # to not update
-/pages/PastPapersCreator.js

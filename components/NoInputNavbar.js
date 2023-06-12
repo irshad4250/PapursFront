@@ -91,6 +91,11 @@ function NoInputNavbar(props) {
           </Link>
         </li>
         <li>
+          <Link href="/PastPapersCreator">
+            <a>Creator</a>
+          </Link>
+        </li>
+        <li>
           <Link href="/ImageSearch">
             <a className={styles.tabLink}>Image Search</a>
           </Link>
@@ -100,11 +105,13 @@ function NoInputNavbar(props) {
             <a>Help</a>
           </Link>
         </li>
-        <li>
+
+        {/* <li>
           <Link href="/About">
             <a>About</a>
           </Link>
-        </li>
+        </li> */}
+
         <li>
           <Link href="/Contact">
             <a>Contact</a>

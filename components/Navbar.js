@@ -197,8 +197,8 @@ function Navbar(props) {
               </Link>
             </li>
             <li>
-              <Link href="/About">
-                <a>About</a>
+              <Link href="/PastPapersCreator">
+                <a>Creator</a>
               </Link>
             </li>
             <li>
