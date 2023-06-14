@@ -18,7 +18,6 @@ import "@react-pdf-viewer/default-layout/lib/styles/index.css"
 import Switch from "react-switch"
 import PaperClipSvg from "../public/assets/icons/bx-paperclip.svg"
 import PenSvg from "../public/assets/icons/bxs-pen.svg"
-import { PDFDocument } from "pdf-lib"
 
 import axios from "axios"
 
