@@ -18,6 +18,7 @@ import "@react-pdf-viewer/default-layout/lib/styles/index.css"
 import Switch from "react-switch"
 import PaperClipSvg from "../public/assets/icons/bx-paperclip.svg"
 import PenSvg from "../public/assets/icons/bxs-pen.svg"
+import { PDFDocument } from "pdf-lib"
 
 import axios from "axios"
 
@@ -132,19 +133,10 @@ function ViewPdf(props) {
   const switchChanged = (e) => setSwitchChecked(e)
 
   const downloadClicked = async () => {
-    let tempLink = document.createElement("a")
     let fileName =
       active == "ms" ? props.pdfName.replace("qp", "ms") : props.pdfName
-    tempLink.download = fileName
-
-    let ref =
-      "data:application/pdf;base64," +
-      (await getDataUrlFromLocal(
-        active == "ms" ? props.pdfMsUrl : props.pdfQpUrl
-      ))
-
-    tempLink.href = ref
-    tempLink.click()
+    const blob = await fetch(pdfLocalUrl[active]).then((res) => res.blob())
+    saveByteArray(fileName, blob)
   }
 
   const getDataUrlFromLocal = (url) => {
@@ -160,6 +152,15 @@ function ViewPdf(props) {
           resolve()
         })
     })
+  }
+
+  function saveByteArray(reportName, byte) {
+    var blob = new Blob([byte], { type: "application/pdf" })
+    var link = document.createElement("a")
+    link.href = window.URL.createObjectURL(blob)
+    var fileName = reportName
+    link.download = fileName
+    link.click()
   }
 
   return (
