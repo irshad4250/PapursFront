@@ -200,11 +200,8 @@ export default function Home() {
           </div>
 
           <div className={styles.howToUseBox}>
-            <h2>New feature: Past Papers Creator</h2>
-            <div>
-              You can now generate a book of past papers using our new past
-              paper Creator tool.
-            </div>
+            <h2>Free Palestine</h2>
+            <div>#STOP_WAR_IN_PALESTINE</div>
             <div>
               A Level: Computer Science (9608), General Paper (AS Level only)
               (8004), Design and Technology (9705), Mathematics (9709), Physics

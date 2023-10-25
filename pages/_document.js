@@ -13,12 +13,22 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
 
+          {/* OLD irshad bhoonee 15*/}
           <Script
             id="Adsense-id"
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8618691594432056"
             async={true}
             strategy={"afterInteractive"}
           />
+
+          {/* NEW * irshad bhoonee /}
+          {/* <Script
+            id="Adsense-id"
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8406436301204792
+            "
+            async={true}
+            strategy={"afterInteractive"}
+          /> */}
         </Head>
         <body>
           <Main />

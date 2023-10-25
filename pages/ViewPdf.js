@@ -20,6 +20,7 @@ import PaperClipSvg from "../public/assets/icons/bx-paperclip.svg"
 import PenSvg from "../public/assets/icons/bxs-pen.svg"
 
 import axios from "axios"
+// import PapursViewer from "../components/PapursViewer"
 
 function PenIcon() {
   return (
@@ -71,7 +72,7 @@ function ViewPdf(props) {
   useEffect(() => {
     setTimeout(() => {
       setWarningBox()
-    }, 2500)
+    }, 1500)
 
     getQpAndMs().then((urlObj) => {
       setPdfLocalUrl(urlObj)
@@ -175,6 +176,7 @@ function ViewPdf(props) {
 
       <Head>
         <title>{props.pdfName}</title>
+        <meta name="theme-color" content="#FFFFFF" />
       </Head>
 
       <NoInputNavbar />
@@ -275,7 +277,18 @@ function ViewPdf(props) {
             />
           </Worker>
         )}
-
+        {/* {pdfDownloaded && (
+          <PapursViewer
+            fileUrl={pdfLocalUrl[active] ? pdfLocalUrl[active] : "pdfbroken"}
+            initialPage={initialPages[active]}
+            onPageChange={(e) => {
+              setInitialPages((prev) => {
+                prev[active] = e.currentPage
+                return prev
+              })
+            }}
+          />
+        )} */}
         <style>{`
       #rpv-core__popover-body-inner-search, #rpv-core__popover-body-inner-toolbar-more-actions{
         max-height: 100% !important;

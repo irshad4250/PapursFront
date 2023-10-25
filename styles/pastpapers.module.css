@@ -4,9 +4,19 @@
   padding: 0;
   width: fit-content;
   margin: auto;
-
   margin-top: 30px;
   font-size: 20px;
+}
+
+.inputRow {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: solid 1px rgb(204, 204, 204);
+  height: 35px;
 }
 
 .paragraph {
@@ -14,6 +24,7 @@
   margin-top: 20px;
   max-width: 400px;
   font-family: var(--fontAccent);
+  text-align: justify;
   padding: 5px;
 }
 
@@ -23,15 +34,22 @@
 }
 
 .filterLabel {
-  font-family: var(--fontAccent);
+  font-family: var(--tailwindFont);
+  font-size: 17px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  background-color: var(--colorAccent);
+  justify-content: center;
+  color: whitesmoke;
 }
 
 .filterInput {
-  width: 170px;
-  height: 30px;
+  width: 250px;
+  height: 100%;
   margin: auto;
-  border-radius: 5px;
-  border: solid 1px rgb(204, 204, 204);
+  border: 0;
+  border-left: solid 1px rgb(204, 204, 204);
   transition: 200ms;
   padding: 5px;
   padding-left: 3px;
@@ -39,10 +57,15 @@
   outline: none;
 }
 
-.filterInput:focus {
+.inputRow:focus-within {
   border: solid 1px var(--colorAccent);
   box-shadow: 0px 0px 8px 1px #c1c1c1;
 }
+
+/* .filterInput:focus > .inputRow {
+  border: solid 1px var(--colorAccent);
+  box-shadow: 0px 0px 8px 1px #c1c1c1;
+} */
 
 .filterContainer {
   width: fit-content;
@@ -52,7 +75,13 @@
 
 .buttonContainer {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   margin-top: 20px;
   gap: 5px;
+}
+
+.goButton {
+  width: 120px;
 }

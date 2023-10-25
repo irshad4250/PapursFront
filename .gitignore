@@ -32,3 +32,4 @@ yarn-error.log*
 .vercel
 
 # to not update
+/components/PapursViewer.js
