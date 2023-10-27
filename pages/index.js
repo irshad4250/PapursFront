@@ -200,8 +200,11 @@ export default function Home() {
           </div>
 
           <div className={styles.howToUseBox}>
-            <h2>Free Palestine</h2>
-            <div>#STOP_WAR_IN_PALESTINE</div>
+            <h2>How to use</h2>
+            <div>
+              Type in your question and press search, you will be redirected to
+              a list of past papers containing your query.
+            </div>
             <div>
               A Level: Computer Science (9608), General Paper (AS Level only)
               (8004), Design and Technology (9705), Mathematics (9709), Physics
