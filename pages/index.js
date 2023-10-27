@@ -198,7 +198,7 @@ export default function Home() {
               </a>
             </Link>
           </div>
-
+          <Block />
           <div className={styles.howToUseBox}>
             <h2>How to use</h2>
             <div>
