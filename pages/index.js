@@ -173,16 +173,11 @@ export default function Home() {
                 <div>A/O Level Past Papers</div>
               </a>
             </Link>
-            <Link href="/ImageSearch">
-              <a className={styles.aboutHref}>
-                <div>Search with picture</div>
-              </a>
-            </Link>
           </div>
           <div className={styles.homeHrefBox}>
             <Link href="/PastPapersCreator">
               <a className={styles.aboutHref}>
-                <div>New: Past Papers Creator</div>
+                <div>Past Papers Creator</div>
               </a>
             </Link>
             <Link href="https://www.instagram.com/pap.urs/">
@@ -198,7 +193,7 @@ export default function Home() {
               </a>
             </Link>
           </div>
-          {/* <Block /> */}
+          <Block />
           <div className={styles.howToUseBox}>
             <h2>How to use</h2>
             <div>
