@@ -106,7 +106,7 @@ function intro(props) {
                   Past Papers Creator
                 </div>
                 Create a book of past papers with our Past Papers Creator tool.
-                A world's first, we are committed to innovation.
+                A world&apos; first, we are committed to innovation.
               </div>
             </div>
             <div className={styles.secondSlideSecondRowListings}>
@@ -136,7 +136,7 @@ function intro(props) {
               marginBottom: 30,
             }}
           >
-            Papurs.com and you're in!
+            Papurs.com and you&apos;re in!
           </div>
           <div
             className={styles.secondSlideFirstRowDescription}
@@ -151,10 +151,10 @@ function intro(props) {
       <div className={styles.thirdSlide}>
         <div className={styles.giveawayTitle}>Giveaway alert!</div>
         <div className={styles.giveawayDescription}>
-          Papurs is hosting it's first ever giveaway, participate now to stand
-          for a chance to win huge prizes. The giveaway is open to anyone. The
-          prizes are student oriented. We have laptops, tablets, headphones. All
-          which will be useful in your studies.
+          Papurs is hosting it&apos;s first ever giveaway, participate now to
+          stand for a chance to win huge prizes. The giveaway is open to anyone.
+          The prizes are student oriented. We have laptops, tablets, headphones.
+          All which will be useful in your studies.
         </div>
 
         <div className={styles.secondSlideSecondRow}>
@@ -173,7 +173,7 @@ function intro(props) {
               <div className={styles.listingDescriptionTitle}>
                 1st Prize Macbook Pro
               </div>
-              Win a brand new 14" M3 Macbook Pro, the perfect tool for your
+              Win a brand new 14&quot; M3 Macbook Pro, the perfect tool for your
               studies. Worth $1700.
             </div>
           </div>

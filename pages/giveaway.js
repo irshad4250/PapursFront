@@ -109,7 +109,7 @@ function Giveaway(props) {
           </div>
           <div className={styles.howTo}>
             <b>
-              Prizes: <br /> 1. 14" M3 Macbook Pro
+              Prizes: <br /> 1. 14 inch M3 Macbook Pro
               <br /> 2. Dell XPS 13 <br />
               3. Galaxy Tab S8
               <br />
