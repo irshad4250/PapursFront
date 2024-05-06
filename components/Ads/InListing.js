@@ -8,7 +8,7 @@ function InListing(props) {
   }, [])
   return (
     <ins
-      class="adsbygoogle"
+      className="adsbygoogle"
       style="display:block"
       data-ad-format="fluid"
       data-ad-layout-key="-gw-3+1f-3d+2z"

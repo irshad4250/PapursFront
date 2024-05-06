@@ -7,7 +7,7 @@ function Giveaway(props) {
       <div className={styles.giveaway}>
         <h1>Giveaway Alert!</h1>
         <p>
-          Enter Papurs's first giveaway for a chance to win an M3 Macbook Pro,
+          Enter Papurs first giveaway for a chance to win an M3 Macbook Pro,
           Dell XPS 13, Galaxy Tab S8 and Airpods pros to help you in your
           studies! Click the button below to enter.
         </p>
