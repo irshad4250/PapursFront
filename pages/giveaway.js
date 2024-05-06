@@ -5,7 +5,7 @@ import axios from "axios"
 import Head from "next/head"
 import { Circle } from "rc-progress"
 
-function giveaway(props) {
+function Giveaway(props) {
   const [linkEmail, setLinkEmail] = useState("")
   const [statusEmail, setStatusEmail] = useState("")
   const [modalContent, setModal] = useState()
@@ -229,4 +229,4 @@ function giveaway(props) {
   }
 }
 
-export default giveaway
+export default Giveaway
