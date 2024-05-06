@@ -1,0 +1,278 @@
+.container {
+  width: 100vw;
+  overflow: auto;
+}
+
+.firstSlide {
+  color: white;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    hsla(263, 70%, 50%, 1) 0%,
+    hsla(290, 100%, 50%, 1) 100%
+  );
+
+  display: flex;
+  flex-direction: row;
+}
+
+.secondSlide {
+  width: 100%;
+  height: fit-content;
+  background-color: rgba(208, 203, 245);
+}
+
+.title {
+  font-size: 80px;
+  width: fit-content;
+  margin: 0;
+  margin: auto;
+  font-family: var(--titleFont);
+}
+
+.leftTitle {
+  box-sizing: border-box;
+  padding-top: 7%;
+  padding-left: 7%;
+  width: 30%;
+  /* background-color: aqua; */
+  height: 100%;
+}
+
+.secondColumn,
+.secondSlideFirstRow {
+  padding: 8%;
+  width: 70%;
+  font-family: var(--tailwindFont);
+  font-size: 50px;
+}
+
+.secondSlideFirstRow {
+  width: 100%;
+  padding: 2%;
+}
+.secondSlideFirstRowTitle {
+  font-size: 40px;
+  margin: auto;
+  margin-top: 40px;
+  text-align: center;
+  width: 70%;
+  font-weight: 500;
+  color: var(--colorAccent);
+}
+
+.secondSlideFirstRowDescription {
+  font-size: 25px;
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+  width: 60%;
+
+  color: black;
+}
+
+.secondSlideSecondRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.no1 {
+  font-weight: bold;
+}
+.description {
+  font-size: 35px;
+  margin-top: 20px;
+}
+
+.scrollDown,
+.enterGiveaway {
+  margin-top: 50px;
+  font-size: 22px;
+  font-family: var(--tailwindFont);
+  color: var(--colorAccent);
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  font-weight: 500;
+  padding-bottom: 3px;
+  border-radius: 25px;
+}
+
+.secondSlideSecondRowListings {
+  box-sizing: content-box;
+  width: 400px;
+  height: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 150px 250px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.listingPicture {
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.listingDescription {
+  font-size: 17px;
+  padding-right: 10px;
+  width: 250px;
+  height: 80%;
+  margin-top: 10px;
+  color: black;
+}
+
+.listingDescriptionTitle {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.thirdSlide {
+  width: 100%;
+  height: fit-content;
+  background-color: var(--colorAccent);
+  flex-direction: row;
+  padding-bottom: 50px;
+}
+
+.giveawayTitle {
+  font-size: 55px;
+  font-weight: Bold;
+  width: fit-content;
+  color: white;
+  margin: auto;
+  padding-top: 20px;
+  font-family: var(--tailwindFont);
+}
+.giveawayDescription {
+  font-size: 30px;
+  width: 80%;
+  color: white;
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+  font-family: var(--tailwindFont);
+}
+
+.thirdSlide {
+  display: block;
+}
+
+.howToEnter {
+  width: 70%;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  margin: auto;
+  margin-top: 20px;
+  padding-bottom: 50px;
+}
+
+.enterGiveaway {
+  margin: auto;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+}
+
+.enterGiveaway:hover {
+  opacity: 0.7;
+}
+
+.enterGiveaway:active {
+  opacity: 0.5;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
+    overflow: visible;
+  }
+  .firstSlide {
+    flex-direction: column;
+    height: auto;
+  }
+  .leftTitle {
+    padding: 1%;
+    width: 100%;
+  }
+  .secondColumn,
+  .secondSlideFirstRow {
+    padding: 5%;
+    width: 100%;
+    font-size: 40px;
+  }
+  .secondSlideFirstRowTitle {
+    font-size: 30px;
+    margin-top: 20px;
+    width: 90%;
+  }
+  .secondSlideFirstRowDescription {
+    font-size: 20px;
+    margin-top: 15px;
+    width: 80%;
+  }
+  .secondSlideSecondRow {
+    margin-top: 30px;
+  }
+  .scrollDown,
+  .enterGiveaway {
+    margin-top: 30px;
+    font-size: 18px;
+    width: 250px;
+    height: 40px;
+  }
+  .secondSlideSecondRowListings {
+    width: 300px;
+    height: 150px;
+    grid-template-columns: 120px 180px;
+  }
+  .listingPicture {
+    width: 120px;
+    height: 120px;
+  }
+  .listingDescription {
+    font-size: 12px;
+    width: 180px;
+    margin-top: 5px;
+  }
+
+  .listingDescriptionTitle {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .giveawayTitle {
+    font-size: 40px;
+    padding-top: 10px;
+  }
+  .giveawayDescription {
+    font-size: 25px;
+    width: 90%;
+    margin-top: 20px;
+  }
+  .howToEnter {
+    width: 90%;
+    font-size: 20px;
+    margin-top: 15px;
+    padding-bottom: 30px;
+  }
+}

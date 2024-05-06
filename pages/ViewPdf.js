@@ -188,6 +188,7 @@ function ViewPdf(props) {
             percent={progress}
             style={{ width: 150, height: 150 }}
             strokeWidth={8}
+            gapDegree={72}
             strokeColor={"#6d28d9"}
           />
           <div className={styles.percentIndicator}>

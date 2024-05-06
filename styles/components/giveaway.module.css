@@ -1,0 +1,38 @@
+/* make styles for giveaway */
+.giveaway {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
+
+.giveaway h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.giveaway p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.giveawayButton {
+  background-color: var(--colorAccent);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+  transition: 200ms ease-in-out;
+}
+
+.giveawayButton:hover {
+  background-color: var(--colorAccentHover);
+}
