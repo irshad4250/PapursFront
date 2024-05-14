@@ -95,12 +95,12 @@ function Giveaway(props) {
           <div className={styles.howTo}>
             How to enter Giveaway: Enter your email in the box below and press
             get link, copy your link and share it to as much person as you can.
-            For your email to appear in the draw you must have at least 5 people
-            who clicked on your link. The more people who click on your link the
-            more times your email will appear in the draw. For example if 15
-            people clicked, your email will appear 3 times in the draw. An email
-            will be sent to you if you won a prize. The draw will be done on
-            15th of June 2024.
+            For your email to appear in the draw you must have
+            <b> at least 5 people who clicked on your link. </b>The more people
+            who click on your link the more times your email will appear in the
+            draw. For example if 15 people clicked, your email will appear 3
+            times in the draw. An email will be sent to you if you won a prize.
+            The draw will be done on 15th of June 2024.
             <b>To view your giveaway link status scroll down.</b>
             <br />
             Share your link to whatsapp, reddit, instagram, facebook, twitter to
