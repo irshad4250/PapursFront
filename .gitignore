@@ -33,3 +33,5 @@ yarn-error.log*
 
 # to not update
 /components/PapursViewer.js
+/pages/giveaway.js
+/pages/intro.js

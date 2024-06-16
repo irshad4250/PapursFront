@@ -8,7 +8,6 @@ import Block from "../components/Ads/Block"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import InstaIcon from "../public/assets/icons/instagram.png"
-import Giveaway from "../components/Giveaway"
 
 let searchValue = ""
 let previousVal = ""
@@ -194,7 +193,7 @@ export default function Home() {
               </a>
             </Link>
           </div>
-          <Giveaway />
+
           <Block />
           <div className={styles.howToUseBox}>
             <h2>How to use</h2>
