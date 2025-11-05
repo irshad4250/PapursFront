@@ -1,3 +1,5 @@
+PAPURS.COM NO LONGER RUNNING DUE TO LACK OF FINANCIAL RESOURCES
+
 Papurs.com front end file
 Made with NEXT.js
 
